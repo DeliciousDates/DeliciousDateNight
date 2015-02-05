@@ -1,0 +1,7 @@
+.about-list .details {
+	display: none;
+}
+
+.about-list .details.active {
+	display: block;
+}
