@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+<<<<<<< HEAD
+  get '/faq' => 'welcome#faq'
+=======
   get 'welcome/landing' => "welcome#landing"
 
   get 'welcome/about' => "welcome#about"
@@ -26,6 +29,7 @@ Rails.application.routes.draw do
   end
 
   resources :date_nights, except: [:new, :create, :index]
+>>>>>>> bcc063cb90b7bdd5305e3fade5e021924e94a624
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
