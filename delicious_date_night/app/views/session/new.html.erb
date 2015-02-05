@@ -1,0 +1,25 @@
+
+<h1>Log In</h1>
+<form action="/session" method="POST">
+	<label>
+		Email Address
+	<input name="email">
+	</label>
+
+
+	<label>
+		Password
+	<input type="password" name="password">
+	</label>
+
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>"/>
+
+	<input type="submit">
+
+
+
+
+
+
+
+</form>

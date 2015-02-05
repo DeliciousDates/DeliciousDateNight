@@ -1,4 +1,4 @@
 class Food < ActiveRecord::Base
-	has_many :dates, {through: :events}
-	has_many :events
+	self.has_many :dates, {through: :events}
+	self.has_many :events
 end

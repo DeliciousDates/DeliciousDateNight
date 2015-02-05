@@ -1,0 +1,28 @@
+<h1>Create a Date</h1>
+
+<%= form_for @date_night, url: {action: "create"} do |date_night_form|%>
+
+	<% if @couple %>
+		<label>Couple: 
+			<input type="text" name="couple" value="<%= @couple.a_fname %> and <%= @couple.b_fname %>" >
+		</label>
+	<% else %>
+
+	<% end %>
+
+	<% if @event %>
+		<label>Event: 
+			<input name="event" value="@event.event_theme"> 
+		</label>
+	<% else %>
+
+	<% end %>
+
+	Meeting Location: <%= date_night_form.text_field :meeting_location %>
+
+	Date and Time: <%= date_night_form.datetime_field :start_date %>
+
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>"/>
+
+<% end %>
+
