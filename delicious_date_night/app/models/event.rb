@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
-	belongs_to :couple
-	belongs_to :food
-	belongs_to :drink
-	belongs_to :activity
-	has_many :couples, {through: :favorites}
+	self.belongs_to :couple
+	self.belongs_to :food
+	self.belongs_to :drink
+	self.belongs_to :activity
+	self.has_many :couples, {through: :favorites}
 end

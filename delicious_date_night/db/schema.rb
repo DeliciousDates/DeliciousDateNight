@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150205172841) do
+ActiveRecord::Schema.define(version: 20150205192451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20150205172841) do
   end
 
   create_table "couples", force: true do |t|
-    t.integer  "a_fname"
+    t.string   "a_fname"
     t.string   "a_lname"
     t.integer  "a_age"
     t.string   "a_gender"
@@ -35,19 +35,19 @@ ActiveRecord::Schema.define(version: 20150205172841) do
     t.string   "b_email"
     t.string   "city"
     t.string   "description"
-    t.string   "picture_url"
+    t.text     "picture_url"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "dates", force: true do |t|
+  create_table "date_nights", force: true do |t|
     t.integer  "initiator_id"
     t.integer  "receiver_id"
     t.integer  "event_id"
     t.datetime "start_date"
     t.string   "meeting_location"
-    t.boolean  "date_occured"
+    t.boolean  "date_occurred"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20150205172841) do
   end
 
   create_table "foods", force: true do |t|
-    t.integer  "cuisine"
+    t.string   "cuisine"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
