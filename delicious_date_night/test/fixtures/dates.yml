@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  initiator_id: 1
+  receiver_id: 1
+  event_id: 1
+  start_date: 2015-02-05 12:27:18
+  meeting_location: MyString
+  date_occured: false
+
+two:
+  initiator_id: 1
+  receiver_id: 1
+  event_id: 1
+  start_date: 2015-02-05 12:27:18
+  meeting_location: MyString
+  date_occured: false

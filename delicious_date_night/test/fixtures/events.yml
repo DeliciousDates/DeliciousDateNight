@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  food_id: 1
+  drink_id: 1
+  activity_id: 1
+  event_theme: MyString
+  couple_id: 1
+  times_favorited: 1
+
+two:
+  food_id: 1
+  drink_id: 1
+  activity_id: 1
+  event_theme: MyString
+  couple_id: 1
+  times_favorited: 1
