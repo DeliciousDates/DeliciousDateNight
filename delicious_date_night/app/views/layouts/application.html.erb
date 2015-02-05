@@ -33,7 +33,7 @@
         <% if current_user %>
           <li><a href="#">Logout</a></li>
         <% else %>
-          <li><a href="#">Login</a></li>
+          <li><a href="<%= session_new_path %>">Login</a></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
