@@ -1,7 +1,7 @@
 class DateNightsController < ApplicationController
 
 	def new
-		
+		@date_night = DateNight.new
 	end
 
 	def create
@@ -9,7 +9,7 @@ class DateNightsController < ApplicationController
 	end
 
 	def edit
-		
+		@date_night = DateNight.find(params[:id])
 	end
 
 	def show

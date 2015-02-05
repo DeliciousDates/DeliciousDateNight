@@ -7,7 +7,7 @@
 			<input type="text" name="couple" value="<%= @couple.a_fname %> and <%= @couple.b_fname %>" >
 		</label>
 	<% else %>
-
+		<h2>Something else will go here</h2>
 	<% end %>
 
 	<% if @event %>
@@ -15,14 +15,18 @@
 			<input name="event" value="@event.event_theme"> 
 		</label>
 	<% else %>
-
+		<h2>Gretchen can't decide what to put here</h2>
 	<% end %>
 
 	Meeting Location: <%= date_night_form.text_field :meeting_location %>
 
-	Date and Time: <%= date_night_form.datetime_field :start_date %>
+	Date and Time:
+	<input type="datetime-local" name="start_date"/>
+
 
 	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>"/>
+
+	<button>Propose a Date</button>
 
 <% end %>
 
