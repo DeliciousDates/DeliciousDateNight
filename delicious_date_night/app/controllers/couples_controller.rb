@@ -24,4 +24,9 @@ class CouplesController < ApplicationController
 		
 	end
 
+	def profile
+		@couple = Couple.find(params[:id])
+		@date_nights = DateNight.where("receiver_id = ? OR initiator_id = ?", params[:id], params[:id])
+	end
+
 end
