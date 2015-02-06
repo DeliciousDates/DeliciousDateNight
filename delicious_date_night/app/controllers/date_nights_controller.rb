@@ -23,7 +23,7 @@ class DateNightsController < ApplicationController
 		event = Event.find(params[:event])
 		start_date = DateTime.parse(params[:start_date])
 
-		date_night = DateNight.create({initiator_id: initiator.id, receiver_id: receiver.id, event_id: event.id, meeting_location: params[:meeting_location], start_date: start_date})
+		date_night = DateNight.create({initiator_id: initiator.id, receiver_id: receiver.id, event_id: event.id, meeting_location: params[:meeting_location], start_date: start_date, date_occurred: false})
 
 		redirect_to "/date_nights/#{date_night.id}"
 	end
@@ -32,6 +32,12 @@ class DateNightsController < ApplicationController
 	# edit the details of a particular date (only receiver or initiator can do this)
 	def edit
 		@date_night = DateNight.find(params[:id])
+		events = Event.all
+		@options = []
+		events.each do |event|
+			@options.push([event.event_theme, event.id])
+		end
+		# @events = Event.all.select { |event| event.id != @date_night.event_id }
 	end
 
 	# GET /date_nights/:id
@@ -45,9 +51,10 @@ class DateNightsController < ApplicationController
 	# POST /date_nights/:id
 	# update date details and save to database
 	def update
+		binding.pry
 		date_night = DateNight.find(params[:id])
-		date_night.meeting_location = params["date_night"]["meeting_location"]
-		date_night.start_date = params[:start_date]
+		date_night.meeting_location = params[:meeting_location]
+		date_night.start_date = DateTime.parse(params[:start_date])
 		date_night.event_id = params[:event_id]
 
 		date_night.save
