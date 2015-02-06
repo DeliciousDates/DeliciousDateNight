@@ -9,11 +9,12 @@ class WelcomeController < ApplicationController
 	end
 
 	def about
-	render(:about)
+		render(:about)
 	end
 
 	def landing
-		
+		@couples = Couple.all
+		render(:landing)
 	end
 
 end

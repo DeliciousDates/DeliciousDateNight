@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'welcome#about'
 
-  get 'welcome/landing' => "welcome#landing"
+  get '/landing' => "welcome#landing"
 
   get 'session/new' => 'session#new'
 
@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   delete 'session' => 'session#destroy'
 
   get 'events/:id' => 'events#show'
-
-  get '/datefinder' => 'dates_and_couples#show'
 
   resources :couples do
 
