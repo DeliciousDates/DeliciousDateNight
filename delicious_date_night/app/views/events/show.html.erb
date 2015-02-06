@@ -1,3 +1,12 @@
 <h1>All the details about the given event</h1>
-
-<h1><%= @event.event_theme %></h1>
+<h1> EVENT THEME: </h1>
+<h3><%= @event.event_theme %></h3>
+<h1>created by:</h1>
+<h3><%= @event.couple.a_fname + @event.couple.a_lname %></h3>
+<h3><%= @event.couple.b_fname + @event.couple.b_lname %></h3>
+<h1>Food: <%= @event.food.cuisine %> </h1>
+<img src=<%= "@event.food.picture_url" %>>
+<h1>Activity: <%= @event.activity.name  %></h1>
+<img src=<%= "@event.activity.picture_url" %>>
+<h1> Drink: <%= @event.drink.recommended_drink %> </h1>
+<img src=<%= "@event.drink.picture_url" %>
