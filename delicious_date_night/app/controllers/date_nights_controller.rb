@@ -3,7 +3,7 @@ class DateNightsController < ApplicationController
 	# GET /couples/:couple_id/date_nights/new
 	# render new date form, with possibly pre-selected categories
 	def new
-		@couple = Couple.find(params[:id])
+		@couple = Couple.find(params[:couple_id])
 		@date_night = DateNight.new
 		if params["receiver_id"]
 			@receiver = Couple.find(params["receiver_id"])
@@ -18,7 +18,13 @@ class DateNightsController < ApplicationController
 	# POST /couples/:couple_id/date_nights
 	# create new date instance
 	def create
-		binding.pry
+		initiator = Couple.find(params[:couple_id])
+		receiver = Couple.find(params[:receiver])
+		event = Event.find(params[:event])
+
+		date_night = DateNight.create({initiator_id: initiator.id, receiver_id: receiver.id, event_id: event.id, meeting_location: params[:meeting_location], start_date: params[:start_date]})
+
+		redirect_to "/date_nights/#{date_night.id}"
 	end
 
 	# GET /date_nights/:id/edit
