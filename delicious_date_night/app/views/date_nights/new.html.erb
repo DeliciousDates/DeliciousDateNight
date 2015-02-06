@@ -4,10 +4,20 @@
 
 	<% if @couple %>
 		<label>Couple: 
-			<input type="text" name="couple" value="<%= @couple.a_fname %> and <%= @couple.b_fname %>" >
+			<input type="text" name="receiver" value="<%= @couple.a_fname %> and <%= @couple.b_fname %>" >
 		</label>
 	<% else %>
-		<h2>Something else will go here</h2>
+		Choose a Couple:
+		<% @couples.each do |couple| %>
+			<div class="row">
+			  <div class="col-sm-6 col-md-4">
+			  	<img src= "<%= couple.picture_url %>" alt="..." class="couple-image">
+			  	<div class="caption">
+			  		<h4> <%= couple.a_fname %> and <%= couple.b_fname %> </h4>
+			  	</div>
+			  </div>
+			</div>
+		<% end %>
 	<% end %>
 
 	<% if @event %>
@@ -15,7 +25,10 @@
 			<input name="event" value="@event.event_theme"> 
 		</label>
 	<% else %>
-		<h2>Gretchen can't decide what to put here</h2>
+		Choose a Theme:
+			<% @events.each do |event| %>
+			
+			<% end %>
 	<% end %>
 
 	Meeting Location: <%= date_night_form.text_field :meeting_location %>

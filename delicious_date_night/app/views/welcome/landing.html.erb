@@ -8,6 +8,10 @@
 			  	<div class="caption">
 			  		<h4> <%= couple.a_fname %> and <%= couple.b_fname %> </h4>
 			  	</div>
+			  	<form action="/couples/<%= @couple.id %>/date_nights" method="POST">
+			  		<input >
+			  		<button>Book Date</button>
+			  	</form>
 			  </div>
 			</div>
 		<% end %>
