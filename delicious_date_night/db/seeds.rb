@@ -18,6 +18,10 @@ Couple.create({a_fname: "Jenny", a_lname: "Smith", a_age: 27, a_gender: "Female"
 
 Couple.create({a_fname: "Belinda", a_lname: "Britton", a_age: 32, a_gender: "Female", a_email: "belinda@gmail.com", b_fname: "Bill", b_lname: "Peterson", b_age: 34, b_gender: "Male", b_email: "bill@gmail.com", city: "New York", description: "We like hockey, ice, pucks, and puppies. Go Rangers!", picture_url: "http://s3-ec.buzzfed.com/static/enhanced/webdr06/2013/4/29/12/enhanced-buzz-19589-1367252358-19.jpg", password: "belindabill"})
 
+Couple.create({a_fname: "Marge", a_lname: "Dodderly", a_age: 82, a_gender: "Female", a_email: "gramma@juno.com", b_fname: "Wilson", b_lname: "Wizend", b_age: 84, b_gender: "Male", b_email: "wilson@aol.com", city: "New York", description: "We're just a silly old couple looking for bingo partners", picture_url: "http://i.imgur.com/jFCOMec.jpg", password: "password"})
+
+
+
 Food.create({cuisine: "Jamaican"})
 Food.create({cuisine: "American"})
 
