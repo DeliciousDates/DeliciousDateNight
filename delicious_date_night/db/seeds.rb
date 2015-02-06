@@ -18,11 +18,20 @@ Couple.create({a_fname: "Jenny", a_lname: "Smith", a_age: 27, a_gender: "Female"
 
 Couple.create({a_fname: "Belinda", a_lname: "Britton", a_age: 32, a_gender: "Female", a_email: "belinda@gmail.com", b_fname: "Bill", b_lname: "Peterson", b_age: 34, b_gender: "Male", b_email: "bill@gmail.com", city: "New York", description: "We like hockey, ice, pucks, and puppies. Go Rangers!", picture_url: "http://s3-ec.buzzfed.com/static/enhanced/webdr06/2013/4/29/12/enhanced-buzz-19589-1367252358-19.jpg", password: "belindabill"})
 
+<<<<<<< HEAD
+Food.create({cuisine: "Jamaican", picture_url: "http://www.windiestrading.com/wp-content/uploads/2011/11/jerk_chicken.jpg"})
+Food.create({cuisine: "American", picture_url: "http://pngimg.com/upload/burger_sandwich_PNG4133.png"})
+=======
+Couple.create({a_fname: "Marge", a_lname: "Dodderly", a_age: 82, a_gender: "Female", a_email: "gramma@juno.com", b_fname: "Wilson", b_lname: "Wizend", b_age: 84, b_gender: "Male", b_email: "wilson@aol.com", city: "New York", description: "We're just a silly old couple looking for bingo partners", picture_url: "http://i.imgur.com/jFCOMec.jpg", password: "password"})
+
+
+
 Food.create({cuisine: "Jamaican"})
 Food.create({cuisine: "American"})
+>>>>>>> tova
 
-Drink.create({base_alcohol: "beer", recommended_drink: "Molson"})
-Drink.create({base_alcohol: "rum", recommended_drink: "mojito"})
+Drink.create({base_alcohol: "beer", recommended_drink: "Molson", picture_url: "http://www.molsoncanadian.ca/~/media/Canadian/assets/images/mc_bottle.ashx"})
+Drink.create({base_alcohol: "rum", recommended_drink: "mojito", picture_url: "https://www.google.com/search?q=mojito&espv=2&biw=1277&bih=640&source=lnms&tbm=isch&sa=X&ei=BunUVNmDFo6WyATtj4CoCw&ved=0CAYQ_AUoAQ#tbm=isch&q=mojito+transparent&imgdii=_&imgrc=c-1Mnwb4M-kLYM%253A%3BD57DJ5IMXoQBMM%3Bhttp%253A%252F%252Ffc03.deviantart.net%252Ffs71%252Ff%252F2012%252F080%252F8%252F6%252Fmojito_by_emptypulchritude-d4tj7wb.png%3Bhttp%253A%252F%252Femptypulchritude.deviantart.com%252Fart%252FMojito-291470267%3B278%3B500"})
 
 Activity.create({name: "Rangers game"})
 Activity.create({name: "Bocce"})

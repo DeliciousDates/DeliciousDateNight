@@ -1,0 +1,21 @@
+<div class="container">
+<h1><%= @couple.a_fname %> and <%= @couple.b_fname %>'s Profile</h1>
+<img src=<%= @couple.picture_url %>/></br>
+<h4><%= @couple.description %></h4>	
+
+<h2><%= @couple.a_fname %> <%= @couple.a_lname %>, <%= @couple.a_age %></h2> 
+(<%= @couple.a_email %>)
+<h2><%= @couple.b_fname %> <%= @couple.b_lname %>, <%= @couple.b_age %></h2> 
+(<%= @couple.b_email %>)
+
+<h4>from <%= @couple.city.upcase %></h4>
+
+<h2>Our Favorited Events</h2></br>
+
+<%# @events.each do |event| %>
+<%# event.event_theme %>
+<%# end %>
+
+<button>This event is my favorite</button>
+		
+</div>
