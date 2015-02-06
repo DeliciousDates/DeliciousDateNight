@@ -1,0 +1,58 @@
+<h1>Welcome, <%= @couple.a_fname %> and <%= @couple.b_fname %>!</h1>
+
+<h2>Your Information</h2>
+
+<h3>About The Two of You:</h3>
+
+<img src="<%= @couple.picture_url %>">
+<p>Description: <%= @couple.description %></p>
+<p>City: <%= @couple.city %></p>
+
+<h3>About <%= @couple.a_fname %>:</h3>
+<p>Full Name: <%= @couple.a_fname %> <%= @couple.a_lname %></p>
+<p>Age: <%= @couple.a_age %></p>
+<p>Gender: <%= @couple.a_gender %></p>
+<p>Email Address: <%= @couple.a_email %></p>
+
+<h3>About <%= @couple.b_fname %>:</h3>
+<p>Full Name: <%= @couple.b_fname %> <%= @couple.b_lname %></p>
+<p>Age: <%= @couple.b_age %></p>
+<p>Gender: <%= @couple.b_gender %></p>
+<p>Email Address: <%= @couple.b_email %></p>
+
+<a href="/couples/<%= @couple.id %>/edit"><button>Edit Your Info</button></a>
+
+<form action="/couples/<%= @couple.id %>" method="POST">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> 
+	<input type="hidden" name="_method" value="DELETE">
+	<button>Delete Your Profile</button>
+</form>
+
+<h2>Your Favorite Events</h2>
+
+<ul>
+<% @couple.favorites.each do |favorite| %>
+	<div>
+		<h3><%= favorite.event.event_theme %></h3>
+		<p>Food: <%= favorite.event.food.cuisine %></p>
+		<p>Drink: <%= favorite.event.drink.recommended_drink %></p>
+		<p>Activity: <%= favorite.event.activity.name %></p>
+		<form action="/couples/<%= @couple.id %>/date_nights/new">
+			<input type="hidden" name="event_id" value="<%= favorite.event_id %>">
+			<button>Book This Date</button>
+		</form>
+		<form action="/couples/<%= @couple.id %>/favorites/<%= favorite.id %>" method="POST">
+			<input type="hidden" name="_method" value="DELETE">
+			<button>Remove from Favorites</button>
+		</form>
+	</div>
+<% end %>
+</ul>
+
+<h2>Your Dates</h2>
+
+<ul>
+<% @date_nights.each do |date_night| %>
+	<li><%= date_night.event.event_theme %> at <%= date_night.meeting_location %></li>
+<% end %>
+</ul>

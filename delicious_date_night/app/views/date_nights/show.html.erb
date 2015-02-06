@@ -15,10 +15,7 @@
 
 <p>Change of plans?</p>
 
-<form action="/date_nights/<%= @date_night.id %>/edit" method="GET">
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>">
-	<button>Edit the Deets</button>
-</form>
+<a href="/date_nights/<%= @date_night.id %>/edit"><button>Edit the Deets</button></a>
 
 <form action="/date_nights/<%= @date_night.id %>" method="POST">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>">

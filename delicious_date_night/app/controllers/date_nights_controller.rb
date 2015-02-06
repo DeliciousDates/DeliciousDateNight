@@ -2,6 +2,12 @@ class DateNightsController < ApplicationController
 
 	def new
 		@date_night = DateNight.new
+		if params["receiver_id"]
+			@couple = Couple.find(params["receiver_id"])
+		end
+		if params["event_id"]
+			@event = Event.find(params["event_id"])
+		end
 	end
 
 	def create
