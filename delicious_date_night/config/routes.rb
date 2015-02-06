@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'welcome#about'
 
-  get 'welcome/landing' => "welcome#landing"
+  get '/landing' => "welcome#landing"
 
   get 'session/new' => 'session#new'
 
