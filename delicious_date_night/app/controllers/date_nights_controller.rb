@@ -21,8 +21,9 @@ class DateNightsController < ApplicationController
 		initiator = Couple.find(params[:couple_id])
 		receiver = Couple.find(params[:receiver])
 		event = Event.find(params[:event])
+		start_date = DateTime.parse(params[:start_date])
 
-		date_night = DateNight.create({initiator_id: initiator.id, receiver_id: receiver.id, event_id: event.id, meeting_location: params[:meeting_location], start_date: params[:start_date]})
+		date_night = DateNight.create({initiator_id: initiator.id, receiver_id: receiver.id, event_id: event.id, meeting_location: params[:meeting_location], start_date: start_date})
 
 		redirect_to "/date_nights/#{date_night.id}"
 	end
@@ -44,15 +45,24 @@ class DateNightsController < ApplicationController
 	# POST /date_nights/:id
 	# update date details and save to database
 	def update
-		binding.pry
+		date_night = DateNight.find(params[:id])
+		date_night.meeting_location = params["date_night"]["meeting_location"]
+		date_night.start_date = params[:start_date]
+		date_night.event_id = params[:event_id]
+
+		date_night.save
+		redirect_to "date_nights/#{date_night.id}"
 	end
 
 	# DELETE /date_nights/:id
 	# cancel a date
 	def destroy
 		date_night = DateNight.find(params[:id])
+		couple = Couple.find(date_night.initiator_id)
 		date_night.destroy
-		redirect_to "/landing"
+
+		# change redirect_to "/landing" once it's fixed!
+		redirect_to "/couples/#{couple.id}/profile"
 	end
 
 end

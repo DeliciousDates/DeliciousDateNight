@@ -2,14 +2,21 @@
 
 <%= form_for @date_night, url: {action: "update"} do |date_night_form|%>
 
-	Meeting Location: <%= date_night_form.text_field :meeting_location %>
+	Event: 
+	<select>
+		<option name="event" value="<%= @date_night.event.event_theme %>"></option>
+
+	</select> 
+
+	Meeting Location: <input name="meeting_location" value="<%= @date_night.meeting_location %>"/>
 
 	Date and Time:
-	<input type="datetime-local" name="start_date"/>
+	<input type="datetime-local" name="start_date" value="<%= @date_night.start_date %>"/>
 
 	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>"/>
 
 	<button>Edit Your Date</button>
 
 <% end %>
-
+	
+	<a href="/date_nights/<%= @date_night.id %>"><button>Cancel</button></a>
