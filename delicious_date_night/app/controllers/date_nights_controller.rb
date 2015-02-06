@@ -13,7 +13,8 @@ class DateNightsController < ApplicationController
 	end
 
 	def show
-		
+		@date_night = DateNight.find(params[:id])
+		@couple = Couple.find(@date_night.receiver_id)
 	end
 
 	def update
