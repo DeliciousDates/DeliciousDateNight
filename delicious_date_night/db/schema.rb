@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150205192451) do
+ActiveRecord::Schema.define(version: 20150206160409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150205192451) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "picture_url"
   end
 
   create_table "couples", force: true do |t|
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 20150205192451) do
     t.string   "recommended_drink"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "picture_url"
   end
 
   create_table "events", force: true do |t|
@@ -81,6 +83,7 @@ ActiveRecord::Schema.define(version: 20150205192451) do
     t.string   "cuisine"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "picture_url"
   end
 
 end

@@ -1,15 +1,28 @@
 <div class="container">
 	<section class="couples">
+		<h1>Couples Yo!</h1>
 		<% @couples.each do |couple| %>
-		<div class="row">
-		  <div class="col-sm-6 col-md-4">
-		      <img src= "<%= couple.picture_url %>" alt="..." class="couple-image">
-		      <div class="caption">
-		        <h4> <%= couple.a_fname %> and <%= couple.b_fname %> </h4>
-	      </div>
+			<div class="row">
+			  <div class="col-sm-6 col-md-4">
+			  	<img src= "<%= couple.picture_url %>" alt="..." class="couple-image">
+			  	<div class="caption">
+			  		<h4> <%= couple.a_fname %> and <%= couple.b_fname %> </h4>
+			  	</div>
+			  </div>
+			</div>
 		<% end %>
+	</section>
 
-		  </div>
-		</div>
+	<section>
+		<% @events.each do |event| %>
+			<div class="row">
+			  <div class="col-sm-6 col-md-4">
+			  	<img src= "<%= event.picture_url %>" alt="..." class="event-image">
+			  	<div class="caption">
+			  		<h4> <%= couple.a_fname %> and <%= couple.b_fname %> </h4>
+			  	</div>
+			  </div>
+			</div>
+		<% end %>
 	</section>
 </div>
