@@ -47,7 +47,7 @@ class DateNightsController < ApplicationController
 		@couple_a = Couple.find(@date_night.initiator_id)
 	end
 
-	# POST /date_nights/:id
+	# PUT /date_nights/:id
 	# update date details and save to database
 	def update
 		date_night = DateNight.find(params[:id])

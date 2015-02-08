@@ -1,3 +1,89 @@
-<section>
-	<h1 class="container">Form for creating a new couple</h1>
-</section>
+<div class="container">
+		<h1>Form for creating a new couple</h1>
+	<!-- top level couple info -->
+	<section>
+		<div class="row" style="float: left;">
+		  <div class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img src="https://secure5.nm-secure.com/sr/images/user_placeholder.png" alt="...">
+		      <div class="caption">
+		        <!-- <h3>Thumbnail label</h3>
+		        <p>...</p> -->
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<textarea placeholder="Write a description" style="resize:none;"></textarea>
+	</section>
+
+	<br><br><br><br><br><br><br>
+
+	
+	<section id="couple-info">
+		<!-- Boo 1 info -->
+		<form method="POST" action="/couples">
+
+			<div>
+				<label for="boo1-first-name">
+					First Name
+					<input placeholder="first name" id="boo1-first-name" />
+				</label>
+				<label>
+					<input placeholder="last name" />
+				</label>
+				<label>
+					<input placeholder="age" />
+				</label>
+				<label>
+					<input placeholder="gender" />
+				</label>
+				<label>
+					<input placeholder="email" />
+				</label>
+			</div>
+		
+
+	<br><br><br><br><br>
+
+		<!-- Boo 2 info -->
+			<div>
+				<label>
+					<input placeholder="first name" />
+				</label>
+				<label>
+					<input placeholder="last name" />
+				</label>
+				<label>
+					<input placeholder="age" />
+				</label>
+				<label>
+					<input placeholder="gender" />
+				</label>
+				<label>
+					<input placeholder="email" />
+				</label>
+			</div>
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>">
+			<button>Done</button>
+		</form>
+	</section>
+
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Gender <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Male</a></li>
+          <li><a href="#">Female</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Rather not say</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+</div>
