@@ -14,6 +14,7 @@ class WelcomeController < ApplicationController
 
 	def landing
 		@couples = Couple.all
+		@foods = Food.all
 		@events = Event.all
 		render(:landing)
 	end

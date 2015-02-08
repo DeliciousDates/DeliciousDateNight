@@ -14,12 +14,12 @@
 	</section>
 
 	<section>
+		<h1>Events Yo!</h1>
 		<% @events.each do |event| %>
 			<div class="row">
 			  <div class="col-sm-6 col-md-4">
-			  	<img src= "<%= event.picture_url %>" alt="..." class="event-image">
 			  	<div class="caption">
-			  		<h4> <%= couple.a_fname %> and <%= couple.b_fname %> </h4>
+			  		<h4> <%= event.event_theme %> </h4>
 			  	</div>
 			  </div>
 			</div>
