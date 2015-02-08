@@ -37,7 +37,6 @@ class DateNightsController < ApplicationController
 		events.each do |event|
 			@options.push([event.event_theme, event.id])
 		end
-		# @events = Event.all.select { |event| event.id != @date_night.event_id }
 	end
 
 	# GET /date_nights/:id
@@ -51,14 +50,13 @@ class DateNightsController < ApplicationController
 	# POST /date_nights/:id
 	# update date details and save to database
 	def update
-		binding.pry
 		date_night = DateNight.find(params[:id])
 		date_night.meeting_location = params[:meeting_location]
 		date_night.start_date = DateTime.parse(params[:start_date])
-		date_night.event_id = params[:event_id]
+		date_night.event_id = params["date_night"][:event_id]
 
 		date_night.save
-		redirect_to "date_nights/#{date_night.id}"
+		redirect_to action: "show", id: date_night.id
 	end
 
 	# DELETE /date_nights/:id

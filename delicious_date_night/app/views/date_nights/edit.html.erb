@@ -3,7 +3,11 @@
 <%= form_for @date_night, url: {action: "update"} do |date_night_form|%>
 	
 	Event: 
-	<%= select_tag (options_for_select( @options ))%>
+	<%= date_night_form.select (:event_id) do %>
+		<% @options.each do |option| -%>
+			<%= content_tag(:option, option.first, value: option.last) %>
+		<% end %>
+	<% end %>
 
 	Meeting Location: <input name="meeting_location" value="<%= @date_night.meeting_location %>"/>
 
