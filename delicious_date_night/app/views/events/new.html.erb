@@ -5,20 +5,22 @@
 		Activity:
 		<select name = "activity">
 			<% @activities.each do |each| %>
-		<option value ="<=%each.id%>"><%=each.name%></option>
+		<option value =<%=each.id.to_i%>><%=each.name%></option>
 			<% end %>
 		</select>
+
 		<br>Food:
 		<select name = "food">
 			<% @foods.each do |each| %>
-		<option value ="<=%each.id%>"><%=each.cuisine%></option>
+		<option value =<%=each.id.to_i%>><%=each.cuisine%></option>
 			<% end %>
 		</select>
+		
 		<br>Drink:
 		<select name = "drink">
 			<% @drinks.each do |each| %>
-		<option value ="<=%each.id%>"><%=each.recommended_drink%></option>
-			<% end %>
+		<option value =<%=each.id.to_i%>><%=each.recommended_drink%></option>
+			<% end %>"
 		</select>
 		<input type = "hidden" name = "couple_id" value = @id>
 		<br>Theme:

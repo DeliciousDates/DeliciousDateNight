@@ -27,11 +27,8 @@ Rails.application.routes.draw do
 
   end
 
-<<<<<<< HEAD
   # resources :date_nights, except: [:new, :create, :index]
-=======
     resources :date_nights, except: [:new, :create, :index]
->>>>>>> tova
 
 
   # Example of regular route:
