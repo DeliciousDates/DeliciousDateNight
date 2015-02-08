@@ -1,11 +1,18 @@
 <h1>Edit Your Date</h1>
 
 <%= form_for @date_night, url: {action: "update"} do |date_night_form|%>
+	
+	Event: 
+	<%= date_night_form.select (:event_id) do %>
+		<% @options.each do |option| -%>
+			<%= content_tag(:option, option.first, value: option.last) %>
+		<% end %>
+	<% end %>
 
-	Meeting Location: <%= date_night_form.text_field :meeting_location %>
+	Meeting Location: <input name="meeting_location" value="<%= @date_night.meeting_location %>"/>
 
 	Date and Time:
-	<input type="datetime-local" name="start_date"/>
+	<input type="datetime-local" name="start_date" value="<%= @date_night.start_date %>"/>
 
 	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>"/>
 
@@ -13,3 +20,4 @@
 
 <% end %>
 
+<a href="/date_nights/<%= @date_night.id %>"><button>Cancel</button></a>

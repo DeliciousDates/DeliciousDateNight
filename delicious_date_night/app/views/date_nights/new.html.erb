@@ -2,23 +2,46 @@
 
 <%= form_for @date_night, url: {action: "create"} do |date_night_form|%>
 
-	<% if @couple %>
+	<% if @receiver %>
 		<label>Couple: 
-			<input type="text" name="couple" value="<%= @couple.a_fname %> and <%= @couple.b_fname %>" >
+			<input type="text" name="receiver" value="<%= @receiver.a_fname %> and <%= @receiver.b_fname %>" >
 		</label>
 	<% else %>
-		<h2>Something else will go here</h2>
+		<h2>Choose a Couple:</h2>
+		<% @receivers.each do |receiver| %>
+			<div class="row">
+			  <div class="col-sm-6 col-md-4">
+			  	<img src= "<%= receiver.picture_url %>" alt="..." class="couple-image">
+			  	<div class="caption">
+			  		<h4><%= receiver.a_fname %> and <%= receiver.b_fname %></h4>
+			  	</div>
+			  		Select This Couple: <input type="radio" value="<%= receiver.id %>" name="receiver">
+			  </div>
+			</div>
+			<br>
+		<% end %>
 	<% end %>
+
+	<hr>
 
 	<% if @event %>
 		<label>Event: 
 			<input name="event" value="@event.event_theme"> 
 		</label>
 	<% else %>
-		<h2>Gretchen can't decide what to put here</h2>
+		<h2>Choose a Date:</h2>
+			<% @events.each do |event| %>
+				<div>
+					<img src="<%= event.food.picture_url%>" alt="..." class="couple-image">
+					<h4><%= event.event_theme %></h4>
+					<p>Eat <strong><%= event.food.cuisine %></strong> food, drink a <strong><%= event.drink.recommended_drink %></strong> (or three!) and then hit up the main event: <strong><%= event.activity.name %>!</strong></p></p>
+				Select This Date: <input type="radio" name="event" value="<%= event.id %>">
+				</div>
+				<br>
+			<% end %>
 	<% end %>
 
-	Meeting Location: <%= date_night_form.text_field :meeting_location %>
+	Meeting Location: <input type="text" name="meeting_location"/>
 
 	Date and Time:
 	<input type="datetime-local" name="start_date"/>

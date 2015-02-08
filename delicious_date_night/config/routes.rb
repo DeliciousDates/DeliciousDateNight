@@ -23,11 +23,9 @@ Rails.application.routes.draw do
 
     resources :favorites, only: [:create, :destroy]
     resources :events, except: [:show, :index]
-    resources :date_nights, { shallow: true }
+    resources :date_nights, {shallow: true}
 
   end
-
-  # resources :date_nights, except: [:new, :create, :index]
 
 
   # Example of regular route:
