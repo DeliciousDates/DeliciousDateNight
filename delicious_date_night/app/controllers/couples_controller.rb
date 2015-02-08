@@ -41,7 +41,7 @@ class CouplesController < ApplicationController
 	# POST /couples
 	# add new couple instance to the database
 	def create
-		
+		render(:landing)
 	end
 
 	# GET /couples/:id/profile

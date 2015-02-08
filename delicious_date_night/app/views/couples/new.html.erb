@@ -19,45 +19,54 @@
 
 	<br><br><br><br><br><br><br>
 
-	<!-- Boo 1 info -->
-	<section>
-		<label for="boo1-first-name">
-			First Name
-			<input placeholder="first name" id="boo1-first-name" />
-		</label>
-		<label>
-			<input placeholder="last name" />
-		</label>
-		<label>
-			<input placeholder="age" />
-		</label>
-		<label>
-			<input placeholder="gender" />
-		</label>
-		<label>
-			<input placeholder="email" />
-		</label>
-	</section>
+	
+	<section id="couple-info">
+		<!-- Boo 1 info -->
+		<form method="POST" action="/couples">
+
+			<div>
+				<label for="boo1-first-name">
+					First Name
+					<input placeholder="first name" id="boo1-first-name" />
+				</label>
+				<label>
+					<input placeholder="last name" />
+				</label>
+				<label>
+					<input placeholder="age" />
+				</label>
+				<label>
+					<input placeholder="gender" />
+				</label>
+				<label>
+					<input placeholder="email" />
+				</label>
+			</div>
+		
 
 	<br><br><br><br><br>
 
-	<!-- Boo 2 info -->
-	<section>
-		<label>
-			<input placeholder="first name" />
-		</label>
-		<label>
-			<input placeholder="last name" />
-		</label>
-		<label>
-			<input placeholder="age" />
-		</label>
-		<label>
-			<input placeholder="gender" />
-		</label>
-		<label>
-			<input placeholder="email" />
-		</label>
+		<!-- Boo 2 info -->
+			<div>
+				<label>
+					<input placeholder="first name" />
+				</label>
+				<label>
+					<input placeholder="last name" />
+				</label>
+				<label>
+					<input placeholder="age" />
+				</label>
+				<label>
+					<input placeholder="gender" />
+				</label>
+				<label>
+					<input placeholder="email" />
+				</label>
+			</div>
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>">
+			<button>Done</button>
+		</form>
 	</section>
 
 
