@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
 	
+	# GET '/'
+	# render welcome page
 	def index
 		# if current_user
 		# 	render html: 'logged'
@@ -8,12 +10,17 @@ class WelcomeController < ApplicationController
 		# end
 	end
 
+	# GET '/about'
+	# render FAQ page
 	def about
 		render(:about)
 	end
 
+	# GET '/landing'
+	# render landing page
 	def landing
 		@couples = Couple.all
+		@foods = Food.all
 		@events = Event.all
 		render(:landing)
 	end

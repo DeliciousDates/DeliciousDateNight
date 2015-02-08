@@ -1,12 +1,13 @@
 <h1>Edit Your Date</h1>
 
 <%= form_for @date_night, url: {action: "update"} do |date_night_form|%>
-
+	
 	Event: 
-	<select>
-		<option name="event" value="<%= @date_night.event.event_theme %>"></option>
-
-	</select> 
+	<%= date_night_form.select (:event_id) do %>
+		<% @options.each do |option| -%>
+			<%= content_tag(:option, option.first, value: option.last) %>
+		<% end %>
+	<% end %>
 
 	Meeting Location: <input name="meeting_location" value="<%= @date_night.meeting_location %>"/>
 
@@ -18,5 +19,5 @@
 	<button>Edit Your Date</button>
 
 <% end %>
-	
-	<a href="/date_nights/<%= @date_night.id %>"><button>Cancel</button></a>
+
+<a href="/date_nights/<%= @date_night.id %>"><button>Cancel</button></a>
