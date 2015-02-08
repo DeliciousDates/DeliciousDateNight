@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
 
 	def create
-		
+
 	end
 
 	def destroy
@@ -9,3 +9,7 @@ class FavoritesController < ApplicationController
 	end
 
 end
+
+def destroy
+		
+	end
