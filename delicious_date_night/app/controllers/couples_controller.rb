@@ -27,7 +27,7 @@ class CouplesController < ApplicationController
 	end
 
 	def create
-		
+		render(:landing)
 	end
 
 	def profile
