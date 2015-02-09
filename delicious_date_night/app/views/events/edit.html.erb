@@ -1,4 +1,32 @@
 <section class="container">
-	<h1>form for editing an event</h1>
-	<h3>which couple id is being used? The one for couple A or B? The one that created the event?</h3>
+<h1>events form goes here</h1>
+<form method = "POST" action =<%= "/couples/" + @id.to_s + "/events/" + @event.id.to_s%>>
+	<input type ="hidden" name = "_method" value="PUT" />
+
+Activity:
+<select name = "activity">
+	
+<% @activities.each do |each| %>
+<option value =<%=each.id%>><%=each.name%></option>
+<% end %>
+</select>
+
+<br>Food:
+<select name = "food">
+<% @foods.each do |each| %>
+<option value =<%=each.id%>><%=each.cuisine%></option>
+<% end %>
+</select>
+<br>Drink:
+<select name = "drink">
+<% @drinks.each do |each| %>
+<option value =<%=each.id%>><%=each.recommended_drink%></option>
+<% end %>
+</select>
+<input type = "hidden" name = "couple_id" value = @id>
+<br>Theme:
+<input type = "text" name = "theme">
+<input type = "submit">
+
+</form>
 </section>
