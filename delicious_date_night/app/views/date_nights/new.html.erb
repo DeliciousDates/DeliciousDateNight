@@ -32,7 +32,7 @@
 		<h2>Choose a Date:</h2>
 			<% @events.each do |event| %>
 				<div>
-					<img src="<%= event.food.picture_url%>" alt="..." class="couple-image">
+					<img src="<%= event.activity.picture_url%>" alt="..." class="couple-image">
 					<h4><%= event.event_theme %></h4>
 					<p>Eat <strong><%= event.food.cuisine %></strong> food, drink a <strong><%= event.drink.recommended_drink %></strong> (or three!) and then hit up the main event: <strong><%= event.activity.name %>!</strong></p></p>
 				Select This Date: <input type="radio" name="event" value="<%= event.id %>">
