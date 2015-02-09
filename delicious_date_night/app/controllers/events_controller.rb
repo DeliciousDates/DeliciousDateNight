@@ -26,12 +26,17 @@ class EventsController < ApplicationController
 	# GET 'couples/:couple_id/events/:id/edit'
 	# get event edit form
 	def edit
-	
+		@event = Event.find(params[:id])
+		@foods = Food.all
+		@drinks = Drink.all
+		@activities = Activity.all
+		@id = params[:couple_id]
 	end
 
 	# PUT 'couples/:couple_id/events/:id'
 	# change event information in database
 	def update
+		@id = params[:id]
 
 	end
 
