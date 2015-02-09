@@ -5,7 +5,7 @@
 	<% if @receiver %>
 		<label><h2>Couple: <%= @receiver.a_fname %> and <%= @receiver.b_fname %></h2>
 			<br> 
-			<img src="<%= @receiver.picture_url %>" alt="..." class="couple-image">
+			<img src="<%= @receiver.avatar %>" alt="..." class="couple-image">
 			<input type="hidden" name="receiver" value="<%= @receiver.id %>" >
 		</label>
 	<% else %>

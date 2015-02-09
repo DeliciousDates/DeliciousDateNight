@@ -4,8 +4,8 @@
 
 <p>You're going out with <strong><%= @couple_a.a_fname %> and <%= @couple_a.b_fname %></strong>. Meet them at <strong><%= @date_night.meeting_location %></strong> at <strong><%= @date_night.start_date %></strong>.</p>
 
-<img src="<%= @couple_a.picture_url %>" alt="..." class="couple-image">
-<img src="<%= @couple_b.picture_url %>" alt="..." class="couple-image">
+<img src="<%= @couple_a.avatar %>" alt="..." class="couple-image">
+<img src="<%= @couple_b.avatar %>" alt="..." class="couple-image">
 
 <p>Your date theme is <strong><%= @date_night.event.event_theme %></strong>. Get ready to eat <strong><%= @date_night.event.food.cuisine
  %></strong> food, drink a <strong><%= @date_night.event.drink.recommended_drink %></strong> (or three!) and then hit up the main event: <strong><%= @date_night.event.activity.name %>!</strong></p>

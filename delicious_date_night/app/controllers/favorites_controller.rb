@@ -11,7 +11,7 @@ class FavoritesController < ApplicationController
 	def destroy
 		favorite = Favorite.find(params[:id])
 		favorite.destroy
-		redirect "/couples/#{params[:couple_id]}/profile"
+		redirect_to "/couples/#{params[:couple_id]}/profile"
 	end
 
 end
