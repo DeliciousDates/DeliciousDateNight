@@ -27,6 +27,9 @@ Rails.application.routes.draw do
 
   end
 
+  # resources :date_nights, except: [:new, :create, :index]
+    resources :date_nights, except: [:new, :create, :index]
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

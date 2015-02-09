@@ -1,4 +1,42 @@
 <section class="container">
-	<h1>form for editing an event</h1>
-	<h3>which couple id is being used? The one for couple A or B? The one that created the event?</h3>
+
+<h1>events form goes here</h1>
+<form method = "POST" action =<%= "/couples/" + @id.to_s + "/events/" + @event.id.to_s%>>
+	<input type ="hidden" name = "_method" value="PUT" />
+
+Activity:
+<select name = "activity">
+<option selected value =<%=@event.activity.id%>><%=@event.activity.name%></option>
+<% @activities.each do |each| %>
+	<% if each.id != @event.activity.id %>
+		<option value =<%=each.id%>><%=each.name%></option>
+	<% end %>
+<% end %>
+</select>
+
+<br>Food:
+<select name = "food">
+<option selected value =<%=@event.food_id%>><%=@event.food.cuisine%></option>
+<% @foods.each do |each| %>
+	<% if each.id != @event.food_id %>
+		<option value =<%=each.id%>><%=each.cuisine%></option>
+	<% end %>
+<% end %>
+
+</select>
+<br>Drink:
+<select name = "drink">
+<option selected value =<%=@event.drink_id%>><%=@event.drink.recommended_drink%></option>
+<% @drinks.each do |each| %>
+	<% if each.id != @event.drink_id%>
+		<option value =<%=each.id%>><%=each.recommended_drink%></option>
+	<% end %>
+<% end %>
+</select>
+<input type = "hidden" name = "couple_id" value = @id>
+<br>Theme:
+<input type = "text" name = "theme">
+<input type = "submit">
+
+</form>
 </section>
