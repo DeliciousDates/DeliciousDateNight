@@ -10,33 +10,68 @@
 
 	 <input type="file" name="picture_url" accept="image/*">
 
+	<label> 
+	Couple's Username
+	<input name="a_fname" value="<%= @couple.username%>"/>
+	</label>
 
+	<label> 
 	Boo 1 First Name
 	<input name="a_fname" value="<%= @couple.a_fname%>"/>
+	</label>
+
+	<label>
 	Boo 1 Last Name
 	<input name="a_lname" value="<%= @couple.a_lname%>"/>
+	</label>
+
+	<label>
 	Age
 	<input name="a_age" value="<%= @couple.a_age%>"/>
+	</label>
+
+	<label>
 	Gender
 	<input name="a_gender" value="<%= @couple.a_gender%>"/></br>
+	</label>
+
+	<label>
 	Boo 1 email
 	<input name="a_email" value="<%= @couple.a_email%>"/>
+	</label>
 	</br>
-
+	
+	<label>
 	Boo 2 First Name
 	<input name="b_fname" value="<%= @couple.b_fname%>"/>
+	</label>
+	
+	<label>
 	Boo 2 Last Name
 	<input name="b_lname" value="<%= @couple.b_lname%>"/>
+	</label>
+	
+	<label>
 	Age
 	<input name="b_age" value="<%= @couple.b_age%>"/>
+	</label>
+
+	<label>
 	Gender
 	<input name="b_gender" value="<%= @couple.b_gender%>"/></br>
+	</label>
+	
+	<label>
 	Boo 2 email
 	<input name="b_email" value="<%= @couple.b_email%>"/></br>
+	</label>
 
+	<label>
 	City
-	<input name="city" value="<%= @couple.city%>"/></br>
-	<textarea name="description" rows="5" cols="20" placeholder="description" value="<%= @couple.description %>"></textarea>
+	<input name="city" value="<%= @couple.city%>"/></br></br>
+	</label>
+
+	<textarea name="description" rows="2" cols="30"><%= @couple.description %></textarea>
 
 	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>"/>
 	<input type="submit" value="Submit Changes"></br>

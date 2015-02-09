@@ -24,6 +24,7 @@ Food.create({cuisine: "American", picture_url: "http://pngimg.com/upload/burger_
 
 Couple.create({a_fname: "Marge", a_lname: "Dodderly", a_age: 82, a_gender: "Female", a_email: "gramma@juno.com", b_fname: "Wilson", b_lname: "Wizend", b_age: 84, b_gender: "Male", b_email: "wilson@aol.com", city: "New York", description: "We're just a silly old couple looking for bingo partners", picture_url: "http://i.imgur.com/jFCOMec.jpg", password: "password"})
 
+
 Drink.create({base_alcohol: "beer", recommended_drink: "Molson", picture_url: "http://www.molsoncanadian.ca/~/media/Canadian/assets/images/mc_bottle.ashx"})
 Drink.create({base_alcohol: "rum", recommended_drink: "mojito", picture_url: "https://www.google.com/search?q=mojito&espv=2&biw=1277&bih=640&source=lnms&tbm=isch&sa=X&ei=BunUVNmDFo6WyATtj4CoCw&ved=0CAYQ_AUoAQ#tbm=isch&q=mojito+transparent&imgdii=_&imgrc=c-1Mnwb4M-kLYM%253A%3BD57DJ5IMXoQBMM%3Bhttp%253A%252F%252Ffc03.deviantart.net%252Ffs71%252Ff%252F2012%252F080%252F8%252F6%252Fmojito_by_emptypulchritude-d4tj7wb.png%3Bhttp%253A%252F%252Femptypulchritude.deviantart.com%252Fart%252FMojito-291470267%3B278%3B500"})
 
