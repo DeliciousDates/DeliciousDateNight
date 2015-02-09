@@ -5,22 +5,31 @@
 
 Activity:
 <select name = "activity">
-	
+<option selected value =<%=@event.activity.id%>><%=@event.activity.name%></option>
 <% @activities.each do |each| %>
-<option value =<%=each.id%>><%=each.name%></option>
+	<% if each.id != @event.activity.id %>
+		<option value =<%=each.id%>><%=each.name%></option>
+	<% end %>
 <% end %>
 </select>
 
 <br>Food:
 <select name = "food">
+<option selected value =<%=@event.food_id%>><%=@event.food.cuisine%></option>
 <% @foods.each do |each| %>
-<option value =<%=each.id%>><%=each.cuisine%></option>
+	<% if each.id != @event.food_id %>
+		<option value =<%=each.id%>><%=each.cuisine%></option>
+	<% end %>
 <% end %>
+
 </select>
 <br>Drink:
 <select name = "drink">
+<option selected value =<%=@event.drink_id%>><%=@event.drink.recommended_drink%></option>
 <% @drinks.each do |each| %>
-<option value =<%=each.id%>><%=each.recommended_drink%></option>
+	<% if each.id != @event.drink_id%>
+		<option value =<%=each.id%>><%=each.recommended_drink%></option>
+	<% end %>
 <% end %>
 </select>
 <input type = "hidden" name = "couple_id" value = @id>
