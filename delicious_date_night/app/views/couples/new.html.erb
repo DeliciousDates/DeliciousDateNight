@@ -1,7 +1,7 @@
 <div class="container">
 		<h1>Enter your information below to signup!</h1>
 	<!-- TOP LEVEL COUPLE INFO -->
-	<form method="POST" action="/couples">
+	<form method="POST" action="/couples" enctype="multipart/form-data">
 		<section>
 			<div class="row" style="float: left;">
 			  <div class="col-sm-6 col-md-4">
@@ -15,6 +15,11 @@
 			    </div>
 			  </div>
 			</div>
+
+			<h4>Couple Photo:</h4></br>
+			<label for="avatar">
+			<input type="file" name="avatar" class="form-control" />
+			</label>
 
 			<label for="couple-username">
 				Couple Username:
