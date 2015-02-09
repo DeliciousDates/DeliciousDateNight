@@ -36,8 +36,9 @@ class EventsController < ApplicationController
 	# PUT 'couples/:couple_id/events/:id'
 	# change event information in database
 	def update
-		@id = params[:id]
-
+		@event = Event.find_by(id: params[:id])
+		updated = @event.update({food_id: params[:food], drink_id: params[:drink], activity_id: params[:activity], event_theme: params[:theme], couple_id: params[:couple_id]})
+		redirect_to("/couples/" + params[:couple_id])
 	end
 
 	# DELETE '/couples/:couple_id/events/:id'
