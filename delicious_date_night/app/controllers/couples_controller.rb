@@ -45,7 +45,6 @@ class CouplesController < ApplicationController
 
 		redirect_to "/session/new"
 	end
-	end
 
 	# GET /couples/:id/profile
 	# get current user couple's information
