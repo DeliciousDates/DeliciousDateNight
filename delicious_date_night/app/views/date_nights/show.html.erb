@@ -2,7 +2,7 @@
 
 <h2>Here are the details:</h2>
 
-<p>You're going out with <strong><%= @couple_a.a_fname %> and <%= @couple_a.b_fname %></strong>. Meet them at <strong><%= @date_night.meeting_location %></strong> at <strong><%= @date_night.start_date %></strong>.</p>
+<p>You're going out with <strong><%= @couple_b.a_fname %> and <%= @couple_b.b_fname %></strong>. Meet them at <strong><%= @date_night.meeting_location %></strong> on <strong><%= @date_night.start_date.strftime("%m/%d/%Y") %></strong> at <strong><%= @date_night.start_date.strftime("%I:%M %p") %></strong>.</p>
 
 <img src="<%= @couple_a.avatar %>" alt="..." class="couple-image">
 <img src="<%= @couple_b.avatar %>" alt="..." class="couple-image">

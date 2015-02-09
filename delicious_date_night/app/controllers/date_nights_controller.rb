@@ -11,7 +11,7 @@ class DateNightsController < ApplicationController
 		if params["event_id"]
 			@event = Event.find(params["event_id"])
 		end
-		@receivers = Couple.all
+		@receivers = Couple.where("id != #{params[:couple_id]}")
 		@events = Event.all
 	end
 
@@ -44,10 +44,16 @@ class DateNightsController < ApplicationController
 	# edit the details of a particular date (only receiver or initiator can do this)
 	def edit
 		@date_night = DateNight.find(params[:id])
-		events = Event.all
-		@options = []
-		events.each do |event|
-			@options.push([event.event_theme, event.id])
+		receiver_id = @date_night.receiver_id
+		initiator_id = @date_night.initiator_id 
+		if session[:couple_id] == initiator_id || session[:couple_id] == receiver_id
+			events = Event.all
+			@options = []
+			events.each do |event|
+				@options.push([event.event_theme, event.id])
+			end
+		else
+			redirect_to "/landing"
 		end
 	end
 
@@ -55,8 +61,18 @@ class DateNightsController < ApplicationController
 	# get date night details
 	def show
 		@date_night = DateNight.find(params[:id])
-		@couple_b = Couple.find(@date_night.receiver_id)
-		@couple_a = Couple.find(@date_night.initiator_id)
+		receiver_id = @date_night.receiver_id
+		initiator_id = @date_night.initiator_id 
+		if session[:couple_id] == initiator_id || session[:couple_id] == receiver_id
+			@couple_a = Couple.find(session[:couple_id])
+			if @couple_a.id == receiver_id
+				@couple_b = Couple.find(initiator_id)
+			else
+				@couple_b = Couple.find(receiver_id)
+			end
+		else
+			redirect_to "/landing"
+		end
 	end
 
 	# PUT /date_nights/:id
