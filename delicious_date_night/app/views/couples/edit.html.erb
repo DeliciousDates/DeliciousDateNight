@@ -1,14 +1,14 @@
 <div class="container">
 <h1>Edit Your Profile</h1>
 
-<form method="POST" action="/couples/<%= @id %>"> 
+<form method="POST" action="/couples/<%= @id %>" enctype="multipart/form-data"/> 
 <input type="hidden" name="_method" value="PUT"/>
 
 
-	<h4>Update your photo:</h4></br>
-	<img src="<%=@couple.picture_url%>"/>
-
-	 <input type="file" name="picture_url" accept="image/*">
+	<label> 
+	<h4>Update your profile picture:</h4></br>
+	<input type="file" name="avatar"/>
+	</label>
 
 	<label> 
 	Couple's Username

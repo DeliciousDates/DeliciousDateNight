@@ -14,9 +14,9 @@ Event.destroy_all
 Favorite.destroy_all
 Food.destroy_all
 
-Couple.create({a_fname: "Jenny", a_lname: "Smith", a_age: 27, a_gender: "Female", a_email: "jenny@gmail.com", b_fname: "Jim", b_lname: "Jones", b_age: 27, b_gender: "Male", b_email: "jim@gmail.com", city: "New York", description: "We're cool. Cool cool cool. Go on a date with us!", picture_url: "http://s3-us-west-1.amazonaws.com/static.brit.co/wp-content/uploads/2013/10/10-Beetlejuice.jpg", password: "password", username:"jennyjim"})
+Couple.create({a_fname: "Jenny", a_lname: "Smith", a_age: 27, a_gender: "Female", a_email: "jenny@gmail.com", b_fname: "Jim", b_lname: "Jones", b_age: 27, b_gender: "Male", b_email: "jim@gmail.com", city: "New York", description: "We're cool. Cool cool cool. Go on a date with us!", avatar: "http://s3-us-west-1.amazonaws.com/static.brit.co/wp-content/uploads/2013/10/10-Beetlejuice.jpg", password: "password", username:"jennyjim"})
 
-Couple.create({a_fname: "Belinda", a_lname: "Britton", a_age: 32, a_gender: "Female", a_email: "belinda@gmail.com", b_fname: "Bill", b_lname: "Peterson", b_age: 34, b_gender: "Male", b_email: "bill@gmail.com", city: "New York", description: "We like hockey, ice, pucks, and puppies. Go Rangers!", picture_url: "http://s3-ec.buzzfed.com/static/enhanced/webdr06/2013/4/29/12/enhanced-buzz-19589-1367252358-19.jpg", password: "password", username: "belindabill"})
+Couple.create({a_fname: "Belinda", a_lname: "Britton", a_age: 32, a_gender: "Female", a_email: "belinda@gmail.com", b_fname: "Bill", b_lname: "Peterson", b_age: 34, b_gender: "Male", b_email: "bill@gmail.com", city: "New York", description: "We like hockey, ice, pucks, and puppies. Go Rangers!", avatar: "http://s3-ec.buzzfed.com/static/enhanced/webdr06/2013/4/29/12/enhanced-buzz-19589-1367252358-19.jpg", password: "password", username: "belindabill"})
 
 
 Food.create({cuisine: "Jamaican", picture_url: "http://www.windiestrading.com/wp-content/uploads/2011/11/jerk_chicken.jpg"})
@@ -31,7 +31,7 @@ Food.create({cuisine: "Hawaiian", picture_url: "http://www.tastyislandhawaii.com
 Food.create({cuisine: "Barbecue", picture_url: "http://www.bonappetit.com/wp-content/uploads/2013/06/texas-style-smoked-brisket.jpg"})
 Food.create({cuisine: "Tapas", picture_url: "http://leeds-list.com/wp-content/uploads/2013/11/stock-tapas-web-668x341.jpg"})
 
-Couple.create({a_fname: "Marge", a_lname: "Dodderly", a_age: 82, a_gender: "Female", a_email: "gramma@juno.com", b_fname: "Wilson", b_lname: "Wizend", b_age: 84, b_gender: "Male", b_email: "wilson@aol.com", city: "New York", description: "We're just a silly old couple looking for bingo partners", picture_url: "http://i.imgur.com/jFCOMec.jpg", password: "password"})
+Couple.create({a_fname: "Marge", a_lname: "Dodderly", a_age: 82, a_gender: "Female", a_email: "gramma@juno.com", b_fname: "Wilson", b_lname: "Wizend", b_age: 84, b_gender: "Male", b_email: "wilson@aol.com", city: "New York", description: "We're just a silly old couple looking for bingo partners", avatar: "http://i.imgur.com/jFCOMec.jpg", password: "password"})
 
 
 Drink.create({base_alcohol: "beer", recommended_drink: "Molson", picture_url: "http://www.molsoncanadian.ca/~/media/Canadian/assets/images/mc_bottle.ashx"})
