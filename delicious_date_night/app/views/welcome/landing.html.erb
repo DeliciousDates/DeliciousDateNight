@@ -1,6 +1,9 @@
+<h2>People and Events:</h2>
+<h1>The perfect recipe for a Delicious Date!</h1>
+
 <div class="container">
 	<section class="couples">
-		<h1>Couples Yo!</h1>
+		<h1>Find Some Friends!</h1>
 		<% @couples.each do |couple| %>
 			<div class="row">
 			  <div class="col-sm-6 col-md-4">
@@ -8,9 +11,9 @@
 			  	<div class="caption">
 			  		<h4> <%= couple.a_fname %> and <%= couple.b_fname %> </h4>
 			  	</div>
-			  	<form action="/couples/<%= @couple.id %>/date_nights" method="POST">
-			  		<input >
-			  		<button>Book Date</button>
+			  	<form action="/couples/<%= @couple.id %>/date_nights/new" method="GET">
+			  		<input type="hidden" name= "receiver_id" value="<%= couple.id %>">
+			  		<button>Make a Date!</button>
 			  	</form>
 			  </div>
 			</div>
@@ -18,13 +21,18 @@
 	</section>
 
 	<section>
-		<h1>Events Yo!</h1>
+		<h1>Choose a Sweet Themed Date!</h1>
 		<% @events.each do |event| %>
 			<div class="row">
 			  <div class="col-sm-6 col-md-4">
+			  	<img src= "<%= event.activity.picture_url %>" alt="..." class="couple-image">
 			  	<div class="caption">
-			  		<h4> <%= event.event_theme %> </h4>
+			  		<h4> <%= event.event_theme %></h4>
 			  	</div>
+			  	<form action="/couples/<%= @couple.id %>/date_nights/new" method="GET">
+			  		<input type="hidden" name= "event_id" value="<%= event.id %>">
+			  		<button>Make a Date!</button>
+			  	</form>
 			  </div>
 			</div>
 		<% end %>
