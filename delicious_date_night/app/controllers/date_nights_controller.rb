@@ -25,6 +25,18 @@ class DateNightsController < ApplicationController
 
 		date_night = DateNight.create({initiator_id: initiator.id, receiver_id: receiver.id, event_id: event.id, meeting_location: params[:meeting_location], start_date: start_date, date_occurred: false})
 
+		initiator_emails = [initiator.a_email, initiator.b_email]
+		initiator_emails.each do |email|
+			client = SendGrid::Client.new(api_user: 'gretchenziegler', api_key: '8DinosaurCupcakes')
+			client.send(SendGrid::Mail.new(to: email, from: 'gretchenziegler@gmail.com', subject: 'You Booked a Delicious Date!', html: '<h1>What a Delicious Date!</h1><br><p>Go <a href="/date_nights/#{date_night.id}">check out the details</a> or send a message!</p>'))
+		end
+
+		receiver_emails = [receiver.a_email, receiver.b_email]
+		receiver_emails.each do |email|
+			client = SendGrid::Client.new(api_user: 'gretchenziegler', api_key: '8DinosaurCupcakes')
+			client.send(SendGrid::Mail.new(to: email, from: 'gretchenziegler@gmail.com', subject: "You've Been Invited on a Delicious Date!", html: '<h1>Someone has invited you on a date!</h1><br><p>Go <a href="/date_nights/#{date_night.id}">check out the details</a> and send them a message to accept!</p>'))
+		end
+
 		redirect_to "/date_nights/#{date_night.id}"
 	end
 
