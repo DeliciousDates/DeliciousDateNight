@@ -7,7 +7,7 @@
 		<% @couples.each do |couple| %>
 			<div class="row">
 			  <div class="col-sm-6 col-md-4">
-			  	<img src= "<%= couple.avatar %>" alt="..." class="couple-image">
+			  	<a href="/couples/<%= couple.id %>"><img src= "<%= couple.avatar %>" alt="..." class="couple-image"></a>
 			  	<div class="caption">
 			  		<h4> <%= couple.a_fname %> and <%= couple.b_fname %> </h4>
 			  	</div>
@@ -21,11 +21,12 @@
 	</section>
 
 	<section>
-		<h1>Choose a Sweet Themed Date!</h1>
+		<h1>Choose a Sweet Themed Date</h1>
+		<h3>...or <a href="/couples/<%= @couple.id %>/events/new">create your own</a>!</h3>
 		<% @events.each do |event| %>
 			<div class="row">
 			  <div class="col-sm-6 col-md-4">
-			  	<img src= "<%= event.activity.picture_url %>" alt="..." class="couple-image">
+			  	<a href="/events/<%= event.id %>"><img src= "<%= event.activity.picture_url %>" alt="..." class="couple-image"></a>
 			  	<div class="caption">
 			  		<h4> <%= event.event_theme %></h4>
 			  	</div>
