@@ -21,7 +21,7 @@ class WelcomeController < ApplicationController
 	def landing
 		if session[:couple_id]
 			@couple = Couple.find(session[:couple_id])
-			@couples = Couple.all
+			@couples = Couple.where("id != #{session[:couple_id]}")
 			@foods = Food.all
 			@events = Event.all
 			render(:landing)

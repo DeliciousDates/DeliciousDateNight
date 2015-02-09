@@ -18,21 +18,24 @@
 
 			<h4>Couple Photo:</h4></br>
 			<label for="avatar">
-			<input type="file" name="avatar" class="form-control" />
+			<input type="file" name="avatar" class="form-control" required/>
 			</label>
 
 			<label for="couple-username">
 				Couple Username:
-				<input id="couple-username" name="couple-username" type="text" class="form-control" />
+
+				<input id="couple-username" name="username" type="text" class="form-control" required/>
+
 			</label>
 				
 			<label for="couple-password">
 				Couple Password:
-				<input id="couple-password" name="password" type="password" class="form-control" />
+				<input id="couple-password" name="password" type="password" class="form-control" required />
 			</label>
 			<label>
 				Couple Description
-				<textarea placeholder="(Describe yourselves in 140 Characters or less)" class="clear form-control" style="resize:none;"></textarea>
+				<textarea name="description" placeholder="(Describe yourselves in 140 Characters or less)" class="clear form-control" style="resize:none;" required></textarea>
+
 			</label>
 		</section>
 
@@ -44,10 +47,10 @@
 				<div>
 					<label for="boo1-first-name">
 						Dater 1:
-						<input placeholder="first name" id="boo1-first-name" name="a_fname" type="text" class="form-control" />
+						<input placeholder="first name" id="boo1-first-name" name="a_fname" type="text" class="form-control" required/>
 					</label>
 					<label>
-						<input placeholder="last name" name="a_lname" type="text" class="form-control" />
+						<input placeholder="last name" name="a_lname" type="text" class="form-control" required/>
 					</label>
 					<!-- <label>
 						<input placeholder="age" name="boo1-age" type="text" class="form-control" />
@@ -56,7 +59,7 @@
 						<input placeholder="gender" name="boo1-gender" type="text" class="form-control" />
 					</label> -->
 					<label>
-						<input placeholder="email" name="a_email" type="text" class="form-control" />
+						<input placeholder="email" name="a_email" type="text" class="form-control"required />
 					</label>
 				</div>
 			
@@ -66,10 +69,10 @@
 				<div>
 					<label>
 						Dater 2:
-						<input placeholder="first name" name="b_fname" type="text" class="form-control" />
+						<input placeholder="first name" name="b_fname" type="text" class="form-control" required />
 					</label>
 					<label>
-						<input placeholder="last name" name="b_lname" type="text" class="form-control" />
+						<input placeholder="last name" name="b_lname" type="text" class="form-control" required />
 					</label>
 					<!-- <label>
 						<input placeholder="age" name="boo2-age" type="text" class="form-control" />
@@ -78,7 +81,7 @@
 						<input placeholder="gender" name="boo2-gender" type="text" class="form-control" />
 					</label> -->
 					<label>
-						<input placeholder="email" name="b_email" type="text" class="form-control" />
+						<input placeholder="email" name="b_email" type="text" class="form-control" required />
 					</label>
 				</div>
 
