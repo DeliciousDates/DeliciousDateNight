@@ -32,6 +32,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/about">About</a></li>
         <% if current_user %>
+          <li><a href="couples/<%= current_user.id %>/profile">Our Profile</a></li>
           <li><a href="session/delete">Logout</a></li>
         <% else %>
           <li><a href="<%= session_new_path %>">Login</a></li>
