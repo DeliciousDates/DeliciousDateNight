@@ -35,6 +35,7 @@ class CouplesController < ApplicationController
 	# GET /couples/new
 	# get new couple form
 	def new
+		@couple = Couple.new
 	end
 
 	# POST /couples
@@ -52,5 +53,12 @@ class CouplesController < ApplicationController
 		@couple = Couple.find(params[:id])
 		@date_nights = DateNight.where("receiver_id = ? OR initiator_id = ?", params[:id], params[:id])
 	end
+
+	private
+
+	def user_params
+	  params.require(:couple).permit(:avatar)
+	end
+
 
 end
