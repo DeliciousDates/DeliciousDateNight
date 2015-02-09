@@ -29,7 +29,7 @@ class CouplesController < ApplicationController
 	def destroy
 		couple = Couple.find(params[:id])
 		couple.destroy
-		redirect_to "/"
+		redirect_to "/landing"
 	end
 
 	# GET /couples/new

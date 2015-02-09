@@ -44,7 +44,9 @@ class EventsController < ApplicationController
 	# DELETE '/couples/:couple_id/events/:id'
 	# delete event from database
 	def destroy
-
+		event = Event.find_by(id: params[:id])
+		Event.destroy(event)
+		redirect_to("/")
 	end
 
 end

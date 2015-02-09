@@ -9,4 +9,9 @@
 <h1>Activity: <%= @event.activity.name  %></h1>
 <img src=<%= "@event.activity.picture_url" %>>
 <h1> Drink: <%= @event.drink.recommended_drink %> </h1>
-<img src=<%= "@event.drink.picture_url" %>
+<img src=<%= "@event.drink.picture_url" %>>
+
+<form method = "POST" action = <%="/couples/" + @event.couple_id.to_s + "/events/" + @event.id.to_s%>>
+<input type ="hidden" name ="_method" value ="DELETE" />
+<input type = "submit" value = "Delete Event">
+</form>
