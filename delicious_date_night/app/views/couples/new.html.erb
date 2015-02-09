@@ -1,5 +1,5 @@
 <div class="container">
-		<h1>Form for creating a new couple</h1>
+		<h1>Enter your information below to signup!</h1>
 	<!-- TOP LEVEL COUPLE INFO -->
 	<form method="POST" action="/couples">
 		<section>
@@ -8,6 +8,7 @@
 			    <div class="thumbnail">
 			      <img src="https://secure5.nm-secure.com/sr/images/user_placeholder.png" alt="...">
 			      <div class="caption">
+			 
 			        <!-- <h3>Thumbnail label</h3>
 			        <p>...</p> -->
 			      </div>
@@ -21,10 +22,13 @@
 			</label>
 				
 			<label for="couple-password">
-				Password:
+				Couple Password:
 				<input id="couple-password" name="password" type="password" class="form-control" />
 			</label>
-			<textarea placeholder="Write a description" class="clear" style="resize:none;"></textarea>
+			<label>
+				Couple Description
+				<textarea placeholder="(Describe yourselves in 140 Characters or less)" class="clear form-control" style="resize:none;"></textarea>
+			</label>
 		</section>
 
 		<br><br><br><br>
