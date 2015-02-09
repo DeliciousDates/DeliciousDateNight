@@ -1,29 +1,37 @@
+
+
 <section class="container">
-	<h1>events form goes here</h1>
-	<form method = "POST" action =<%= "/couples/" + @id.to_s + "/events"%>>
+<h1>events form goes here</h1>
+<form method = "POST" action =<%= "/couples/" + @id.to_s + "/events"%>>
 
-		Activity:
-		<select name = "activity">
-			<% @activities.each do |each| %>
-		<option value ="<=%each.id%>"><%=each.name%></option>
-			<% end %>
-		</select>
-		<br>Food:
-		<select name = "food">
-			<% @foods.each do |each| %>
-		<option value ="<=%each.id%>"><%=each.cuisine%></option>
-			<% end %>
-		</select>
-		<br>Drink:
-		<select name = "drink">
-			<% @drinks.each do |each| %>
-		<option value ="<=%each.id%>"><%=each.recommended_drink%></option>
-			<% end %>
-		</select>
-		<input type = "hidden" name = "couple_id" value = @id>
-		<br>Theme:
-		<input type = "text" name = "theme">
-		<input type = "submit">
 
-	</form>
+<br>Activity:
+<select name = "activity">
+<% @activities.each do |each| %>
+<option value =<%=each.id%>><%=each.name%></option>
+<% end %>
+
+<br>Food: 
+<select name = "food">
+<% @foods.each do |each| %>
+<option value =<%=each.id%>><%=each.cuisine%></option>
+<% end %>
+</select>
+
+<br>Drink:
+<select name = "drink">
+<% @drinks.each do |each| %>
+<option value =<%=each.id%>><%=each.recommended_drink%></option>
+<% end %>
+</select>
+<input type = "hidden" name = "couple_id" value = @id>
+
+<br>Theme:
+<input type = "text" name = "theme">
+<input type = "submit">
+
+</form>
+
+
+
 </section>
