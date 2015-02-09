@@ -50,10 +50,10 @@
 
 	<h2>Other Important Details:</h2>
 
-	Meeting Location: <input type="text" name="meeting_location"/>
+	Meeting Location: <input type="text" name="meeting_location" required/>
 
 	Date and Time:
-	<input type="datetime-local" name="start_date"/>
+	<input type="datetime-local" name="start_date" required/>
 
 
 	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>"/>

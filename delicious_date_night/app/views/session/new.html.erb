@@ -3,12 +3,12 @@
 <form action="/session" method="POST">
 	<label>
 		Username: 
-	<input name="username">
+	<input name="username" required>
 	</label>
 
 	<label>
 		Password: 
-		<input type="password" name="password">
+		<input type="password" name="password" required>
 	</label>
 
 	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>"/>
