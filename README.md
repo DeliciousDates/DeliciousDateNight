@@ -11,14 +11,14 @@ With **Delicious Date Night**, users can:
 - Couples can update the details of or cancel a date
 - Browse dates created by other users and add these events to their favorites
 
-** Delicious Date Night utilizes the following technologies and languages:**
+**Delicious Date Night utilizes the following technologies and languages:**
 
 - *Ruby on Rails*: a super back-end language plus the sweetest library around; it works seamlessly with ActiveRecord and a postgresql database
 - *JavaScript and jQuery*: a front-end language that puts the FUN in 'functional user interaction'
 - *SendGrid*: an API that allows applications to send customized emails to users
 - *Paperclip*: a library that lets users upload images to the application
 
-** Check out the process of building Delicious Date Night (think wireframes, ERDs, sweet pictures, etc.) [here](https://trello.com/b/Ypi5lJ2X/couples-app), at our Trello board!**
+**Check out the process of building Delicious Date Night (think wireframes, ERDs, sweet pictures, etc.) [here](https://trello.com/b/Ypi5lJ2X/couples-app), at our Trello board!**
 
 **Delicious Date Night was designed and built by:**
 
