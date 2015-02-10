@@ -4,6 +4,7 @@ class CouplesController < ApplicationController
 	# get the information for couples that are not the user
 	def show
 		@couple = Couple.find(params[:id])
+		@event = Event.where(id: params[:id])
 	end
 
 	# GET couples/:id/edit
@@ -49,6 +50,7 @@ class CouplesController < ApplicationController
 	# GET /couples/:id/profile
 	# get current user couple's information
 	def profile
+		# binding.pry
 		@couple = Couple.find(params[:id])
 		if session[:couple_id] == @couple.id
 			@date_nights = DateNight.where("receiver_id = ? OR initiator_id = ?", params[:id], params[:id])

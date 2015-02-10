@@ -33,7 +33,7 @@
 <ul>
 <% @couple.favorites.each do |favorite| %>
 	<div>
-		<h3><%= favorite.event.event_theme %></h3>
+		<h3><% favorite.event.event_theme %></h3>
 		<p>Food: <%= favorite.event.food.cuisine %></p>
 		<p>Drink: <%= favorite.event.drink.recommended_drink %></p>
 		<p>Activity: <%= favorite.event.activity.name %></p>
