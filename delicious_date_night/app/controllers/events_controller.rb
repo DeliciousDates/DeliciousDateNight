@@ -14,13 +14,14 @@ class EventsController < ApplicationController
 	# create new event instance assigned to a couple
 	def create
 		Event.create({food_id: params[:food], drink_id: params[:drink], activity_id: params[:activity], event_theme: params[:theme], couple_id: params[:couple_id]})
-		redirect_to("/couples/" + params[:couple_id] + "/profile")
+		redirect_to "/profile"
 	end
 
 	# GET 'events/:id'
 	# show a particular event and its details
 	def show
 		@event = Event.find(params[:id])
+		@couple = Couple.find(session[:couple_id])
 	end
 
 	# GET 'couples/:couple_id/events/:id/edit'
@@ -38,7 +39,7 @@ class EventsController < ApplicationController
 	def update
 		@event = Event.find_by(id: params[:id])
 		updated = @event.update({food_id: params[:food], drink_id: params[:drink], activity_id: params[:activity], event_theme: params[:theme], couple_id: params[:couple_id]})
-		redirect_to("/couples/" + params[:couple_id])
+		redirect_to "/profile"
 	end
 
 	# DELETE '/couples/:couple_id/events/:id'

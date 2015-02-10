@@ -28,3 +28,16 @@
 #statement {
 	color: gray;
 }
+
+#block {
+	text-indent: -9999px;
+	background-image: url('new.jpg');
+	display:block;
+	background-size: 100%;
+	background-position: center;
+	overflow: hidden;
+	margin-top: 50px;
+	height: 400px;
+	opacity: .75;
+
+}
