@@ -21,7 +21,7 @@ class CouplesController < ApplicationController
 		@couple = Couple.find(params["id"])
 		@couple.update(a_fname: params["a_fname"], a_lname: params["a_lname"], a_age: params["a_age"], a_gender: params["a_gender"], a_email: params["a_email"], b_fname: params["b_fname"], b_lname: params["b_lname"], b_age: params["b_age"], b_gender: params["b_gender"], b_email: params["b_email"], picture_url: params["picture_url"], description: params["description"], avatar: params[:avatar])
 
-		redirect_to "/couples/#{@couple.id}/profile"
+		redirect_to "/profile"
 	end
 
 	# DELETE '/couples/:id"
@@ -46,11 +46,11 @@ class CouplesController < ApplicationController
 		redirect_to "/session/new"
 	end
 
-	# GET /couples/:id/profile
+	# GET /profile
 	# get current user couple's information
 	def profile
-		@couple = Couple.find(params[:id])
-		if session[:couple_id] == @couple.id
+		if session[:couple_id]
+			@couple = Couple.find(session[:couple_id])
 			@date_nights = DateNight.where("receiver_id = ? OR initiator_id = ?", params[:id], params[:id])
 		else
 			redirect_to "/landing"

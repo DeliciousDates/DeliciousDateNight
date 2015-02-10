@@ -95,7 +95,7 @@ class DateNightsController < ApplicationController
 		date_night.destroy
 
 		# change redirect_to "/landing" once it's fixed!
-		redirect_to "/couples/#{couple.id}/profile"
+		redirect_to "/profile"
 	end
 
 end
