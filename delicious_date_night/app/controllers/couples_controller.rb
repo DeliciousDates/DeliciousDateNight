@@ -4,6 +4,7 @@ class CouplesController < ApplicationController
 	# get the information for couples that are not the user
 	def show
 		@couple = Couple.find(params[:id])
+		@event = Event.where(id: params[:id])
 	end
 
 	# GET couples/:id/edit

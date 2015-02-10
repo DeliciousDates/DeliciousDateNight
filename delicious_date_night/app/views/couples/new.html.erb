@@ -6,9 +6,11 @@
 			<div class="row" style="float: left;">
 			  <div class="col-sm-6 col-md-4">
 			    <div class="thumbnail">
-			      <img src="https://secure5.nm-secure.com/sr/images/user_placeholder.png" alt="...">
-			      <div class="caption">
-			 
+			    	<img src="https://secure5.nm-secure.com/sr/images/user_placeholder.png" alt="...">
+			    	<div class="caption">
+			 		<label for="avatar">
+						<input type="file" name="avatar" required/>
+					</label>
 			        <!-- <h3>Thumbnail label</h3>
 			        <p>...</p> -->
 			      </div>
@@ -16,22 +18,29 @@
 			  </div>
 			</div>
 
+<<<<<<< HEAD
 			<h4>Couple Photo:</h4></br>
-			<label for="avatar">
+			<label for="avatar"></br>
 			<input type="file" name="avatar" class="form-control" required/>
 			</label>
 
+=======
+>>>>>>> 5a438f48f7ab53003ff4cebeb7dd0b9f7cd7aca2
 			<label for="couple-username">
 				Couple Username:
-
 				<input id="couple-username" name="username" type="text" class="form-control" required/>
-
 			</label>
 				
 			<label for="couple-password">
 				Couple Password:
 				<input id="couple-password" name="password" type="password" class="form-control" required />
 			</label>
+
+			<label for="couple-city">
+				City:
+				<input id="couple-city" name="city" type="text" class="form-control" required />
+			</label>
+
 			<label>
 				Couple Description
 				<textarea name="description" placeholder="(Describe yourselves in 140 Characters or less)" class="clear form-control" style="resize:none;" required></textarea>
@@ -61,6 +70,15 @@
 					<label>
 						<input placeholder="email" name="a_email" type="text" class="form-control"required />
 					</label>
+
+					<div>
+						<label for="gender">
+							<input id="gender" name="b_gender" type="text" placeholder="gender" class="clear form-control" required />
+						</label>
+						<label for="gender">
+							<input id="gender" name="b_age" type="text" placeholder="age" class="clear form-control" required />
+						</label>
+					</div>
 				</div>
 			
 		<br><br>
@@ -83,6 +101,14 @@
 					<label>
 						<input placeholder="email" name="b_email" type="text" class="form-control" required />
 					</label>
+					<div>
+						<label for="gender">
+							<input id="gender" name="b_gender" type="text" placeholder="gender" class="clear form-control" required />
+						</label>
+						<label for="gender">
+							<input id="gender" name="b_age" type="text" placeholder="age" class="clear form-control" required />
+						</label>
+					</div>
 				</div>
 
 				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>">
