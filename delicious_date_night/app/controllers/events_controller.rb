@@ -21,6 +21,7 @@ class EventsController < ApplicationController
 	# show a particular event and its details
 	def show
 		@event = Event.find(params[:id])
+		@couple = Couple.find(session[:couple_id])
 	end
 
 	# GET 'couples/:couple_id/events/:id/edit'

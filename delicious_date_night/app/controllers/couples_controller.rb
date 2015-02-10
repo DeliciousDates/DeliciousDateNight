@@ -51,7 +51,9 @@ class CouplesController < ApplicationController
 	def profile
 		if session[:couple_id]
 			@couple = Couple.find(session[:couple_id])
-			@date_nights = DateNight.where("receiver_id = ? OR initiator_id = ?", params[:id], params[:id])
+			@date_nights = DateNight.where("receiver_id = #{session[:couple_id]} or initiator_id = #{session[:couple_id]}")
+			@events = Event.where("couple_id = #{session[:couple_id]}")
+			@favorites = Favorite.where("couple_id = #{session[:couple_id]}")
 		else
 			redirect_to "/landing"
 		end

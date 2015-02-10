@@ -4,7 +4,7 @@ class FavoritesController < ApplicationController
 	# create new favorite event for a couple
 	def create
 		@favorite = Favorite.create({couple_id: params[:couple_id], event_id: params[:event_id]})
-		redirect_to "/events/" + params[:event_id]
+		redirect_to "/profile"
 	end
 
 	# DELETE couples/:couple_id/favorites/:id
