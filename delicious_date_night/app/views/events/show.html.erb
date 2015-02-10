@@ -10,7 +10,7 @@
 <h1> Drink: <%= @event.drink.recommended_drink %> </h1>
 <img src=<%= @event.drink.picture_url %>>
 <br>
-<form method = "POST" action = <%= "/couples/" + @event.couple_id.to_s + "/favorites" %>>
+<form method = "POST" action = "/couples/<%= @couple.id %>/favorites">
 	<input type ="hidden" name ="event_id" value =<%= @event.id.to_s %>>
 	<button>Favorite!</button>
 </form>	

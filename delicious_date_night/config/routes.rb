@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'events/:id' => 'events#show'
 
-  get '/couples/:id/profile' => "couples#profile"
+  get '/profile' => "couples#profile"
 
   resources :couples do
 
