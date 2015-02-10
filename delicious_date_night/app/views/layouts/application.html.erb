@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>DeliciousDateNight</title>
+  <link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -31,7 +32,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/about">About</a></li>
         <% if current_user %>
-          <li><a href="#">Logout</a></li>
+          <li><a href="<%= profile_path %>">Our Profile</a></li>
+          <li><a href="<%= session_delete_path %>">Logout</a></li>
         <% else %>
           <li><a href="<%= session_new_path %>">Login</a></li>
         <% end %>

@@ -14,7 +14,11 @@ class EventsController < ApplicationController
 	# create new event instance assigned to a couple
 	def create
 		Event.create({food_id: params[:food], drink_id: params[:drink], activity_id: params[:activity], event_theme: params[:theme], couple_id: params[:couple_id]})
+<<<<<<< HEAD
 		redirect_to("/couples/" + params[:couple_id])
+=======
+		redirect_to "/profile"
+>>>>>>> f43c0af1bbec50ddcabe5e0628a96766ed4ebca0
 	end
 
 	# GET 'events/:id'
@@ -38,13 +42,19 @@ class EventsController < ApplicationController
 	def update
 		@event = Event.find_by(id: params[:id])
 		updated = @event.update({food_id: params[:food], drink_id: params[:drink], activity_id: params[:activity], event_theme: params[:theme], couple_id: params[:couple_id]})
+<<<<<<< HEAD
 		redirect_to("/couples/" + params[:couple_id])
+=======
+		redirect_to "/profile"
+>>>>>>> f43c0af1bbec50ddcabe5e0628a96766ed4ebca0
 	end
 
 	# DELETE '/couples/:couple_id/events/:id'
 	# delete event from database
 	def destroy
-
+		event = Event.find_by(id: params[:id])
+		Event.destroy(event)
+		redirect_to("/landing")
 	end
 
 end

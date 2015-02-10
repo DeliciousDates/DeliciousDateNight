@@ -13,11 +13,11 @@ Rails.application.routes.draw do
 
   post 'session' => 'session#create'
 
-  delete 'session' => 'session#destroy'
+  get 'session/delete' => 'session#destroy'
 
   get 'events/:id' => 'events#show'
 
-  get '/couples/:id/profile' => "couples#profile"
+  get '/profile' => "couples#profile"
 
   resources :couples do
 

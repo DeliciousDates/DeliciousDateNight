@@ -1,7 +1,11 @@
 
 
 <section class="container">
+<<<<<<< HEAD
 <h1>events form goes here</h1>
+=======
+<h1>Create an Event</h1>
+>>>>>>> f43c0af1bbec50ddcabe5e0628a96766ed4ebca0
 <form method = "POST" action =<%= "/couples/" + @id.to_s + "/events"%>>
 
 
@@ -10,6 +14,10 @@
 <% @activities.each do |each| %>
 <option value =<%=each.id%>><%=each.name%></option>
 <% end %>
+<<<<<<< HEAD
+=======
+</select>
+>>>>>>> f43c0af1bbec50ddcabe5e0628a96766ed4ebca0
 
 <br>Food: 
 <select name = "food">
@@ -27,7 +35,11 @@
 <input type = "hidden" name = "couple_id" value = @id>
 
 <br>Theme:
+<<<<<<< HEAD
 <input type = "text" name = "theme">
+=======
+<input type = "text" name = "theme" required>
+>>>>>>> f43c0af1bbec50ddcabe5e0628a96766ed4ebca0
 <input type = "submit">
 
 </form>

@@ -19,10 +19,15 @@ class WelcomeController < ApplicationController
 	# GET '/landing'
 	# render landing page
 	def landing
-		@couples = Couple.all
-		@foods = Food.all
-		@events = Event.all
-		render(:landing)
+		if session[:couple_id]
+			@couple = Couple.find(session[:couple_id])
+			@couples = Couple.where("id != #{session[:couple_id]}")
+			@foods = Food.all
+			@events = Event.all
+			render(:landing)
+		else
+			redirect_to '/'
+		end
 	end
 
 end

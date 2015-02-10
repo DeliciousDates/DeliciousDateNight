@@ -1,42 +1,80 @@
 <div class="container">
 <h1>Edit Your Profile</h1>
 
-<form method="POST" action="/couples/<%= @id %>"> 
+
+
+<form method="POST" action="/couples/<%= @id %>" enctype="multipart/form-data"/> 
 <input type="hidden" name="_method" value="PUT"/>
 
+<img src=<%= @couple.avatar %>></br>
 
-	<h4>Update your photo:</h4></br>
-	<img src="<%=@couple.picture_url%>"/>
+	<label> 
+	<h4>Update your profile picture:</h4></br>
+	<input type="file" name="avatar" required/>
+	</label>
 
-	 <input type="file" name="picture_url" accept="image/*">
+	<label> 
+	Couple's Username
+	<input name="a_fname" value="<%= @couple.username%>" required/>
+	</label>
 
-
+	<label> 
 	Boo 1 First Name
-	<input name="a_fname" value="<%= @couple.a_fname%>"/>
+	<input name="a_fname" value="<%= @couple.a_fname%>" required/>
+	</label>
+
+	<label>
 	Boo 1 Last Name
-	<input name="a_lname" value="<%= @couple.a_lname%>"/>
+	<input name="a_lname" value="<%= @couple.a_lname%>" required/>
+	</label>
+
+	<label>
 	Age
-	<input name="a_age" value="<%= @couple.a_age%>"/>
+	<input name="a_age" value="<%= @couple.a_age%>" required/>
+	</label>
+
+	<label>
 	Gender
-	<input name="a_gender" value="<%= @couple.a_gender%>"/></br>
+	<input name="a_gender" value="<%= @couple.a_gender%>" required/></br>
+	</label>
+
+	<label>
 	Boo 1 email
-	<input name="a_email" value="<%= @couple.a_email%>"/>
+	<input name="a_email" value="<%= @couple.a_email%>" required/>
+	</label>
 	</br>
-
+	
+	<label>
 	Boo 2 First Name
-	<input name="b_fname" value="<%= @couple.b_fname%>"/>
+	<input name="b_fname" value="<%= @couple.b_fname%>" required/>
+	</label>
+	
+	<label>
 	Boo 2 Last Name
-	<input name="b_lname" value="<%= @couple.b_lname%>"/>
+	<input name="b_lname" value="<%= @couple.b_lname%>" required/>
+	</label>
+	
+	<label>
 	Age
-	<input name="b_age" value="<%= @couple.b_age%>"/>
-	Gender
-	<input name="b_gender" value="<%= @couple.b_gender%>"/></br>
-	Boo 2 email
-	<input name="b_email" value="<%= @couple.b_email%>"/></br>
+	<input name="b_age" value="<%= @couple.b_age%>" required/>
+	</label>
 
+	<label>
+	Gender
+	<input name="b_gender" value="<%= @couple.b_gender%>" required/></br>
+	</label>
+	
+	<label>
+	Boo 2 email
+	<input name="b_email" value="<%= @couple.b_email%>" required/></br>
+	</label>
+
+	<label>
 	City
-	<input name="city" value="<%= @couple.city%>"/></br>
-	<textarea name="description" rows="5" cols="20" placeholder="description" value="<%= @couple.description %>"></textarea>
+	<input name="city" value="<%= @couple.city%>" required/></br></br>
+	</label>
+
+	<textarea name="description" rows="2" cols="30" required><%= @couple.description %></textarea>
 
 	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>"/>
 	<input type="submit" value="Submit Changes"></br>

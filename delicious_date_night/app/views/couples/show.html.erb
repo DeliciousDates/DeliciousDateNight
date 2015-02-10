@@ -1,6 +1,7 @@
 <div class="container">
+
 <h1><%= @couple.a_fname %> and <%= @couple.b_fname %>'s Profile</h1>
-<img src=<%= @couple.picture_url %>></br>
+<img src=<%= @couple.avatar %>></br>
 <h4><%= @couple.description %></h4>	
 
 <h2><%= @couple.a_fname %> <%= @couple.a_lname %>, <%= @couple.a_age %></h2> 
@@ -8,7 +9,7 @@
 <h2><%= @couple.b_fname %> <%= @couple.b_lname %>, <%= @couple.b_age %></h2> 
 (<%= @couple.b_email %>)
 
-<h4>from <%= @couple.city.upcase %></h4>
+<h4>from <%= @couple.city %></h4>
 
 
 <a href="/couples/<%= @couple.id %>/date_nights/new"><button>Date us!</button></a></br>
