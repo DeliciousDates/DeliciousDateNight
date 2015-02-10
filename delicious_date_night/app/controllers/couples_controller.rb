@@ -50,7 +50,11 @@ class CouplesController < ApplicationController
 	# get current user couple's information
 	def profile
 		@couple = Couple.find(params[:id])
-		@date_nights = DateNight.where("receiver_id = ? OR initiator_id = ?", params[:id], params[:id])
+		if session[:couple_id] == @couple.id
+			@date_nights = DateNight.where("receiver_id = ? OR initiator_id = ?", params[:id], params[:id])
+		else
+			redirect_to "/landing"
+		end
 	end
 
 	private
