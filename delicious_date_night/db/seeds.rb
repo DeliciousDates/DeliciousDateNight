@@ -62,5 +62,5 @@ Event.create({food_id: 2, drink_id: 1, activity_id: 1, event_theme: "HOCKEYHOCKE
 Favorite.create({event_id: 1, couple_id: 2})
 Favorite.create({event_id: 2, couple_id: 1})
 
-DateNight.create({initiator_id: 1, receiver_id: 2, event_id: 1, meeting_location: "Bryant Park", date_occurred: false})
+DateNight.create({initiator_id: 1, receiver_id: 2, event_id: 1, meeting_location: "Bryant Park", start_date: Time.now, date_occurred: false})
 
