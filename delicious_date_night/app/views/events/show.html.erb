@@ -5,13 +5,18 @@
 <h3><%= @event.couple.a_fname + " " + @event.couple.a_lname %></h3>
 <h3><%= @event.couple.b_fname + " " + @event.couple.b_lname %></h3>
 <h1>Food: <%= @event.food.cuisine %> </h1>
-<img src=<%= "@event.food.picture_url" %>>
+<img src=<%= @event.food.picture_url %>>
 <h1>Activity: <%= @event.activity.name  %></h1>
-<img src=<%= "@event.activity.picture_url" %>>
+<img src=<%= @event.activity.picture_url %>>
 <h1> Drink: <%= @event.drink.recommended_drink %> </h1>
-<img src=<%= "@event.drink.picture_url" %>>
-
+<img src=<%= @event.drink.picture_url %>>
+<br>
+<form method = "POST" action = <%= "/couples/" + @event.couple_id.to_s + "/favorites" %>>
+	<input type ="hidden" name ="event_id" value =<%= @event.id.to_s %>>
+	<button>Favorite!</button>
+</form>	
+<br>
 <form method = "POST" action = <%="/couples/" + @event.couple_id.to_s + "/events/" + @event.id.to_s%>>
-<input type ="hidden" name ="_method" value ="DELETE" />
-<input type = "submit" value = "Delete Event">
+	<input type ="hidden" name ="_method" value ="DELETE" />
+	<input type = "submit" value = "Delete Event">
 </form>

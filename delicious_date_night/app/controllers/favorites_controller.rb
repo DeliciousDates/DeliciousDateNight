@@ -3,7 +3,8 @@ class FavoritesController < ApplicationController
 	# POST couples/:couple_id/favorites
 	# create new favorite event for a couple
 	def create
-		@favorite = Favorite.create({couple_id: couple.id, event_id: event.id})
+		@favorite = Favorite.create({couple_id: params[:couple_id], event_id: params[:event_id]})
+		redirect_to "/events/" + params[:event_id]
 	end
 
 	# DELETE couples/:couple_id/favorites/:id
