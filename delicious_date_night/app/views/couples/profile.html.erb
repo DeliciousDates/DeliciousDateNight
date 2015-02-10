@@ -134,7 +134,7 @@
 				<p>Activity: <%= event.activity.name %></p>
 				<img src="<%= event.food.picture_url %>" class="couple-image">
 				<br><br>
-				<a href="/couples/@couple.id/events/<%= event.id %>/edit"><button class="btn btn-success">Edit the Details</button></a>
+				<a href="/couples/<%= @couple.id %>/events/<%= event.id %>/edit"><button class="btn btn-success">Edit the Details</button></a>
 				<br><br>
 				<form action="/couples/<%= @couple.id %>/events/<%= event.id %>" method="POST">
 					<input type="hidden" name="_method" value="DELETE">
