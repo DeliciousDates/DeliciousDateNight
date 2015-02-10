@@ -1,40 +1,50 @@
-<h2>People and Events:</h2>
-<h1>The perfect recipe for a Delicious Date!</h1>
+<div class="container">
+<h1>Make a Delicious Date!</h1>
+</div>
 
 <div class="container">
 	<section class="couples">
-		<h1>Find Some Friends!</h1>
+		<h2>Find Some Friends!</h2>
 		<% @couples.each do |couple| %>
-			<div class="row">
-			  <div class="col-sm-6 col-md-4">
-			  	<a href="/couples/<%= couple.id %>"><img src= "<%= couple.avatar %>" alt="..." class="couple-image"></a>
-			  	<div class="caption">
-			  		<h4> <%= couple.a_fname %> and <%= couple.b_fname %> </h4>
-			  	</div>
-			  	<form action="/couples/<%= @couple.id %>/date_nights/new" method="GET">
-			  		<input type="hidden" name= "receiver_id" value="<%= couple.id %>">
-			  		<button>Make a Date!</button>
-			  	</form>
-			  </div>
+			<div class="col-sm-4">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title"><strong> <%= couple.a_fname %> and <%= couple.b_fname %> </strong></h3>
+					</div>
+					<div class="panel-body">
+						<a href="/couples/<%= couple.id %>"><img src= "<%= couple.avatar %>" alt="..." class="couple-image"></a>
+						<br><br>
+						<form action="/couples/<%= @couple.id %>/date_nights/new" method="GET">
+			  			<input type="hidden" name= "receiver_id" value="<%= couple.id %>">
+			  			<button class="btn btn-success">Make a Date!</button>
+			  		</form>
+					</div>
+				</div>
 			</div>
 		<% end %>
 	</section>
+</div>
 
+	<br>
+<div class="container">
 	<section>
-		<h1>Choose a Sweet Themed Date</h1>
+		<h2>Choose a Sweet Themed Date</h2>
 		<h3>...or <a href="/couples/<%= @couple.id %>/events/new">create your own</a>!</h3>
 		<% @events.each do |event| %>
-			<div class="row">
-			  <div class="col-sm-6 col-md-4">
-			  	<a href="/events/<%= event.id %>"><img src= "<%= event.activity.picture_url %>" alt="..." class="couple-image"></a>
-			  	<div class="caption">
-			  		<h4> <%= event.event_theme %></h4>
-			  	</div>
-			  	<form action="/couples/<%= @couple.id %>/date_nights/new" method="GET">
-			  		<input type="hidden" name= "event_id" value="<%= event.id %>">
-			  		<button>Make a Date!</button>
-			  	</form>
-			  </div>
+			<div class="col-sm-4">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title"><strong><%= event.event_theme %></strong></h3>
+					</div>
+					<div class="panel-body">
+						<a href="/events/<%= event.id %>"><img src= "<%= event.activity.picture_url %>" alt="..." class="couple-image"></a>
+						<br><br>
+						 <form action="/couples/<%= @couple.id %>/date_nights/new" method="GET">
+			  			<input type="hidden" name= "event_id" value="<%= event.id %>">
+			  			<button class="btn btn-warning">Make a Date!</button>
+			  		</form>
+					</div>
+				</div>
 			</div>
 		<% end %>
 	</section>
