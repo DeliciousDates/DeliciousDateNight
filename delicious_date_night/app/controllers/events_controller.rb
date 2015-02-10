@@ -47,7 +47,7 @@ class EventsController < ApplicationController
 	def destroy
 		event = Event.find_by(id: params[:id])
 		Event.destroy(event)
-		redirect_to("/landing")
+		redirect_to("/profile")
 	end
 
 end
