@@ -1,42 +1,50 @@
 <div class="container">
 
-<h1><%= @couple.a_fname %> and <%= @couple.b_fname %>'s Profile</h1>
-<img src=<%= @couple.avatar %>></br>
-<h4><%= @couple.description %></h4>	
+			<h1><%= @couple.a_fname %> and <%= @couple.b_fname %>'s Profile</h1>
+			<img src=<%= @couple.avatar %>></br>
+			<h4><%= @couple.description %></h4>	
 
-<h2><%= @couple.a_fname %> <%= @couple.a_lname %>, <%= @couple.a_age %></h2> 
-(<%= @couple.a_email %>)
-<h2><%= @couple.b_fname %> <%= @couple.b_lname %>, <%= @couple.b_age %></h2> 
-(<%= @couple.b_email %>)
+		<h2><%= @couple.a_fname %> <%= @couple.a_lname %>, <%= @couple.a_age %></h2> 
+		(<%= @couple.a_email %>)
+		<h2><%= @couple.b_fname %> <%= @couple.b_lname %>, <%= @couple.b_age %></h2> 
+		(<%= @couple.b_email %>)
 
-<h4>from <%= @couple.city %></h4>
-
-
-<a href="/couples/<%= @couple.id %>/date_nights/new"><button>Date us!</button></a></br>
+		<h4>from <%= @couple.city %></h4>
 
 
-<h2>These are our favorite events</h2></br>
+		<a href="/couples/<%= @couple.id %>/date_nights/new"><button>Date us!</button></a></br>
 
-<ul>
-<% @couple.favorites.each do |favorite| %>
-	<div>
-		<h3><%= favorite.event.event_theme %></h3>
-		<p>Food: <%= favorite.event.food.cuisine %></p>
-		<p>Drink: <%= favorite.event.drink.recommended_drink %></p>
-		<p>Activity: <%= favorite.event.activity.name %></p>
-		<form action="/couples/<%= @couple.id %>/date_nights/new">
-			<input type="hidden" name="event_id" value="<%= favorite.event_id %>">
+		<h2>Events Created By Us</h2>
+		<ul>
+			<% @couple.events.each do |event| %>
+			<li><%= event.event_theme %></li>
+			<img src="<%= event.activity.picture_url %>">
+			<% end %>
+		</ul>
 
-			<button>Add to favorites</button>
-			<button>Book This Date</button>
-		</form>
-		<form action="/couples/<%= @couple.id %>/favorites/<%= favorite.id %>" method="POST">
-			<input type="hidden" name="_method" value="DELETE">
-			<button>Remove from Favorites</button>
-		</form>
-	</div>
-<% end %>
-</ul>
+
+		<h2>These are our favorite events</h2></br>
+
+		<ul>
+			<% @couple.favorites.each do |favorite| %>
+			<div>
+				<h3><%= favorite.event.event_theme %></h3>
+				<p>Food: <%= favorite.event.food.cuisine %></p>
+				<p>Drink: <%= favorite.event.drink.recommended_drink %></p>
+				<p>Activity: <%= favorite.event.activity.name %></p>
+				<form action="/couples/<%= @couple.id %>/date_nights/new">
+					<input type="hidden" name="event_id" value="<%= favorite.event_id %>">
+
+					<button>Add to favorites</button>
+					<button>Book This Date</button>
+				</form>
+				<form action="/couples/<%= @couple.id %>/favorites/<%= favorite.id %>" method="POST">
+					<input type="hidden" name="_method" value="DELETE">
+					<button>Remove from Favorites</button>
+				</form>
+			</div>
+			<% end %>
+		</ul>
 
 		
-</div>
+	</div>

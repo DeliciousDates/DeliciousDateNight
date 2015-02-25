@@ -27,4 +27,4 @@ With **Delicious Date Night**, users can:
 - Alex Wang
 - Gretchen Ziegler
 
-### Sign up and start dating at [**Delicious Date Night**](deployed link here)!
+### Sign up and start dating at [**Delicious Date Night**](http://deliciousdatenight.com)!

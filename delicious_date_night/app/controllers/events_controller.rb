@@ -25,6 +25,7 @@ class EventsController < ApplicationController
 	# show a particular event and its details
 	def show
 		@event = Event.find(params[:id])
+		@couple = Couple.find(session[:couple_id])
 	end
 
 	# GET 'couples/:couple_id/events/:id/edit'
@@ -54,7 +55,7 @@ class EventsController < ApplicationController
 	def destroy
 		event = Event.find_by(id: params[:id])
 		Event.destroy(event)
-		redirect_to("/landing")
+		redirect_to("/profile")
 	end
 
 end
