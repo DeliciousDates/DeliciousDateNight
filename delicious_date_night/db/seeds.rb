@@ -31,7 +31,7 @@ Food.create({cuisine: "Hawaiian", picture_url: "http://www.tastyislandhawaii.com
 Food.create({cuisine: "Barbecue", picture_url: "http://www.bonappetit.com/wp-content/uploads/2013/06/texas-style-smoked-brisket.jpg"})
 Food.create({cuisine: "Tapas", picture_url: "http://leeds-list.com/wp-content/uploads/2013/11/stock-tapas-web-668x341.jpg"})
 
-Couple.create({a_fname: "Marge", a_lname: "Dodderly", a_age: 82, a_gender: "Female", a_email: "gramma@juno.com", b_fname: "Wilson", b_lname: "Wizend", b_age: 84, b_gender: "Male", b_email: "wilson@aol.com", city: "New York", description: "We're just a silly old couple looking for bingo partners", avatar: "http://i.imgur.com/jFCOMec.jpg", password: "password", username: "margiewill"})
+Couple.create({a_fname: "Marge", a_lname: "Dodderly", a_age: 82, a_gender: "Female", a_email: "gramma@juno.com", b_fname: "Wilson", b_lname: "Wizend", b_age: 84, b_gender: "Male", b_email: "wilson@aol.com", city: "New York", description: "We're just a silly old couple looking for bingo partners", avatar: "http://inspire52.com/wp-content/uploads/2013/12/EllieandCarlUp.jpg", password: "password", username: "margiewill"})
 
 
 Drink.create({base_alcohol: "beer", recommended_drink: "Molson", picture_url: "http://www.molsoncanadian.ca/~/media/Canadian/assets/images/mc_bottle.ashx"})
