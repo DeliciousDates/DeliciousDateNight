@@ -1,10 +1,8 @@
 <div class="container">
-	<div class="row">
-		<div class="col-sm-4">
+
 			<h1><%= @couple.a_fname %> and <%= @couple.b_fname %>'s Profile</h1>
 			<img src=<%= @couple.avatar %>></br>
 			<h4><%= @couple.description %></h4>	
-		</div>
 
 		<h2><%= @couple.a_fname %> <%= @couple.a_lname %>, <%= @couple.a_age %></h2> 
 		(<%= @couple.a_email %>)
@@ -15,7 +13,6 @@
 
 
 		<a href="/couples/<%= @couple.id %>/date_nights/new"><button>Date us!</button></a></br>
-	<div class="col-sm-4">
 
 		<h2>Events Created By Us</h2>
 		<ul>
@@ -24,7 +21,6 @@
 			<img src="<%= event.activity.picture_url %>">
 			<% end %>
 		</ul>
-	</div>
 
 
 		<h2>These are our favorite events</h2></br>
