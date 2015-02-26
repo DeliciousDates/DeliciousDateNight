@@ -3,83 +3,122 @@
 
 
 
+<div class="container">
+	<!-- TOP LEVEL COUPLE INFO -->
 <form method="POST" action="/couples/<%= @id %>" enctype="multipart/form-data"/> 
-<input type="hidden" name="_method" value="PUT"/>
+	<input type="hidden" name="_method" value="PUT"/>
 
-<img src=<%= @couple.avatar %>></br>
+		<section>
+			<!-- <label> 
+				<input type="file" name="avatar"/>
+			</label> -->
+			<div class="row" style="float: left;">
+				<h5>Update your </br>profile picture:</h5></br>
+			  <div class="col-sm-6 col-md-4">
+			    <div class="thumbnail">
+						<img src=<%= @couple.avatar %>></br>
+			    	<div class="caption">
+			 		<label for="avatar">
+						<input type="file" name="avatar" id="couple_photo" />
+					</label>
+			        <!-- <h3>Thumbnail label</h3>
+			        <p>...</p> -->
+			      </div>
+			    </div>
+			  </div>
+			</div>
 
-	<label> 
-	<h4>Update your profile picture:</h4></br>
-	<input type="file" name="avatar"/>
-	</label>
+			<label for="couple-username">
+				Couple Username:
+				<input id="couple-username" name="username" type="text" class="form-control" value="<%= @couple.username%>" required/>
+			</label>
+				
+			<label for="couple-password">
+				Couple Password:
+				<input id="couple-password" name="password" type="password" class="form-control"  />
+			</label>
 
-	<label> 
-	Couple's Username
-	<input name="username" value="<%= @couple.username%>" required/>
-	</label>
+			<label for="couple-city">
+				City:
+				<input id="couple-city" name="city" type="text" class="form-control" value="<%= @couple.city%>"required />
+			</label></br>
 
-	<label> 
-	Boo 1 First Name
-	<input name="a_fname" value="<%= @couple.a_fname%>" required/>
-	</label>
+			<label>
+				Couple Description
+				<textarea name="description" rows="4" cols="30" class="clear form-control" placeholder="(Describe yourselves in 140 Characters or less)" style="resize:none;" style="float:left;"required><%= @couple.description%></textarea>
 
-	<label>
-	Boo 1 Last Name
-	<input name="a_lname" value="<%= @couple.a_lname%>" required/>
-	</label>
+			</label>
+		</section>
 
-	<label>
-	Age
-	<input name="a_age" value="<%= @couple.a_age%>" required/>
-	</label>
+		<br><br><br><br>
 
-	<label>
-	Gender
-	<input name="a_gender" value="<%= @couple.a_gender%>" required/></br>
-	</label>
+		
+		<section id="couple-info">
+			<!-- Boo 1 info -->
+				<div>
+					<label for="boo1-first-name">
+						Dater 1:
+						<input placeholder="first name" id="boo1-first-name" name="a_fname" type="text" class="form-control" value="<%= @couple.a_fname%>" required/>
+					</label>
+					<label>
+						<input placeholder="last name" name="a_lname" type="text" class="form-control" value="<%= @couple.a_lname%>" required/>
+					</label>
+					<!-- <label>
+						<input placeholder="age" name="boo1-age" type="text" class="form-control" />
+					</label> -->
+					<!-- <label>
+						<input placeholder="gender" name="boo1-gender" type="text" class="form-control" />
+					</label> -->
+					<label>
+						<input placeholder="email" name="a_email" type="text" class="form-control" value="<%= @couple.a_email%>"required />
+					</label>
 
-	<label>
-	Boo 1 email
-	<input name="a_email" value="<%= @couple.a_email%>" required/>
-	</label>
-	</br>
-	
-	<label>
-	Boo 2 First Name
-	<input name="b_fname" value="<%= @couple.b_fname%>" required/>
-	</label>
-	
-	<label>
-	Boo 2 Last Name
-	<input name="b_lname" value="<%= @couple.b_lname%>" required/>
-	</label>
-	
-	<label>
-	Age
-	<input name="b_age" value="<%= @couple.b_age%>" required/>
-	</label>
+					<div>
+						<label for="gender">
+							<input id="gender" name="a_gender" type="text" placeholder="gender" class="clear form-control" value="<%= @couple.a_gender%>" required />
+						</label>
+						<label for="age">
+							<input id="age" name="a_age" type="text" placeholder="age" class="clear form-control" value="<%= @couple.a_age%>" required />
+						</label>
+					</div>
+				</div>
+			
+		<br><br>
 
-	<label>
-	Gender
-	<input name="b_gender" value="<%= @couple.b_gender%>" required/></br>
-	</label>
-	
-	<label>
-	Boo 2 email
-	<input name="b_email" value="<%= @couple.b_email%>" required/></br>
-	</label>
+			<!-- Boo 2 info -->
+				<div>
+					<label>
+						Dater 2:
+						<input placeholder="first name" name="b_fname" type="text" class="form-control" value="<%= @couple.b_fname%>" required />
+					</label>
+					<label>
+						<input placeholder="last name" name="b_lname" type="text" class="form-control" value="<%= @couple.b_lname%>" required />
+					</label>
+					<!-- <label>
+						<input placeholder="age" name="boo2-age" type="text" class="form-control" />
+					</label> -->
+					<!-- <label>
+						<input placeholder="gender" name="boo2-gender" type="text" class="form-control" />
+					</label> -->
+					<label>
+						<input placeholder="email" name="b_email" type="text" class="form-control" value="<%= @couple.b_email%>" required />
+					</label>
+					<div>
+						<label for="gender">
+							<input id="gender" name="b_gender" type="text" placeholder="gender" class="clear form-control" value="<%= @couple.b_gender%>" required />
+						</label>
+						<label for="gender">
+							<input id="gender" name="b_age" type="text" placeholder="age" class="clear form-control" value="<%= @couple.b_age%>" required />
+						</label>
+					</div>
+				</div>
 
-	<label>
-	City
-	<input name="city" value="<%= @couple.city%>" required/></br></br>
-	</label>
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>">
+				<input type="submit" class="btn btn-primary" />
+					<a href="/couples/<%= @couple.id%>"><button>Cancel Changes</button></a>
 
-	<textarea name="description" rows="2" cols="30" required><%= @couple.description %></textarea>
-
-	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>"/>
-	<input type="submit" value="Submit Changes"></br>
-	<a href="/couples/<%= @couple.id%>"><button>Cancel Changes</button></a>
-
+		</section>
 	</form>
 
+	<br><br><br><br><br><br><br>
 </div>
