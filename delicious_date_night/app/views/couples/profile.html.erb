@@ -48,76 +48,88 @@
 
 	<div class="col-sm-4">
 		<h2>Your Favorite Events:</h2>
-		<% @couple.favorites.each do |favorite| %>
-			<div class="panel panel-warning">
-				<div class="panel-heading">
-					<h3 class="panel-title"><strong><%= favorite.event.event_theme %></strong></h3>					
+		<% if @couple.favorites.length > 0 %>
+			<% @couple.favorites.each do |favorite| %>
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title"><strong><%= favorite.event.event_theme %></strong></h3>					
+					</div>
+					<div class="panel-body">
+						<p><strong>Food:</strong> <%= favorite.event.food.cuisine %></p>
+						<p><strong>Drink:</strong> <%= favorite.event.drink.recommended_drink %></p>
+						<p><strong>Activity:</strong> <%= favorite.event.activity.name %></p>
+						<img src="<%= favorite.event.drink.picture_url %>" class="couple-image">
+						<br><br>
+						<form action="/couples/<%= @couple.id %>/date_nights/new">
+							<input type="hidden" name="event_id" value="<%= favorite.event_id %>">
+							<button class="btn btn-success">Book This Date</button>
+						</form>
+						<br>
+						<form action="/couples/<%= @couple.id %>/favorites/<%= favorite.id %>" method="POST">
+							<input type="hidden" name="_method" value="DELETE">
+							<button class="btn btn-warning">Remove from Favorites</button>
+						</form>
+					</div>
 				</div>
-				<div class="panel-body">
-					<p><strong>Food:</strong> <%= favorite.event.food.cuisine %></p>
-					<p><strong>Drink:</strong> <%= favorite.event.drink.recommended_drink %></p>
-					<p><strong>Activity:</strong> <%= favorite.event.activity.name %></p>
-					<img src="<%= favorite.event.drink.picture_url %>" class="couple-image">
-					<br><br>
-					<form action="/couples/<%= @couple.id %>/date_nights/new">
-						<input type="hidden" name="event_id" value="<%= favorite.event_id %>">
-						<button class="btn btn-success">Book This Date</button>
-					</form>
-					<br>
-					<form action="/couples/<%= @couple.id %>/favorites/<%= favorite.id %>" method="POST">
-						<input type="hidden" name="_method" value="DELETE">
-						<button class="btn btn-warning">Remove from Favorites</button>
-					</form>
-				</div>
-			</div>
+			<% end %>
+		<% else %>
+			<h3>You have no favorite events. <a href="/landing">Go find some!</a></h3>
 		<% end %>
 	</div>
 
 	<div class="col-sm-4">
 	<h2>Events You Created:</h2>
-	<% @events.each do |event| %>
-		<div class="panel panel-warning">
-			<div class="panel-heading">
-				<h3 class="panel-title"><strong><%= event.event_theme %></strong></h3>					
+	<% if @events.length > 0 %>
+		<% @events.each do |event| %>
+			<div class="panel panel-warning">
+				<div class="panel-heading">
+					<h3 class="panel-title"><strong><%= event.event_theme %></strong></h3>					
+				</div>
+				<div class="panel-body">
+					<p><strong>Food:</strong> <%= event.food.cuisine %></p>
+					<p><strong>Drink:</strong> <%= event.drink.recommended_drink %></p>
+					<p><strong>Activity:</strong> <%= event.activity.name %></p>
+					<img src="<%= event.food.picture_url %>" class="couple-image">
+					<br><br>
+					<a href="/couples/<%= @couple.id %>/events/<%= event.id %>/edit"><button class="btn btn-success">Edit the Details</button></a>
+					<br><br>
+					<form action="/couples/<%= @couple.id %>/events/<%= event.id %>" method="POST">
+						<input type="hidden" name="_method" value="DELETE">
+						<button class="btn btn-warning">Delete This Event</button>
+					</form>
+				</div>
 			</div>
-			<div class="panel-body">
-				<p><strong>Food:</strong> <%= event.food.cuisine %></p>
-				<p><strong>Drink:</strong> <%= event.drink.recommended_drink %></p>
-				<p><strong>Activity:</strong> <%= event.activity.name %></p>
-				<img src="<%= event.food.picture_url %>" class="couple-image">
-				<br><br>
-				<a href="/couples/<%= @couple.id %>/events/<%= event.id %>/edit"><button class="btn btn-success">Edit the Details</button></a>
-				<br><br>
-				<form action="/couples/<%= @couple.id %>/events/<%= event.id %>" method="POST">
-					<input type="hidden" name="_method" value="DELETE">
-					<button class="btn btn-warning">Delete This Event</button>
-				</form>
-			</div>
-		</div>
+		<% end %>
+	<% else %>
+		<h3>You haven't made any events. <a href="/couples/<%= @couple.id %>/events/new">Go make one!</a></h3>
 	<% end %>
 	</div>
 
 	<div class="col-sm-4">
 		<h2>Your Dates:</h2>
-		<% @date_nights.each do |date_night| %>
-			<div class="panel panel-warning">
-				<div class="panel-heading">
-					<h3 class="panel-title"><strong><%= date_night.event.event_theme %></strong></h3>					
+		<% if @date_nights.length > 0 %>
+			<% @date_nights.each do |date_night| %>
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title"><strong><%= date_night.event.event_theme %></strong></h3>					
+					</div>
+					<div class="panel-body">
+						<p><strong>Meeting Location:</strong> <%= date_night.meeting_location %></p>
+						<p><strong>Date and Time:</strong> <%= date_night.start_date.strftime("%m/%d/%Y") %> at <%= date_night.start_date.strftime("%I:%M %p") %></p>
+						<img src="<%= date_night.event.activity.picture_url %>" class="couple-image">
+						<br><br>
+						<a href="/date_nights/<%= date_night.id %>"><button class="btn btn-primary">See the Details</button></a>
+						<a href="/date_nights/<%= date_night.id %>/edit"><button class="btn btn-success">Edit the Details</button></a>
+						<br><br>
+						<form action="/date_nights/<%= date_night.id %>" method="POST">
+							<input type="hidden" name="_method" value="DELETE">
+							<button class="btn btn-warning">Cancel Date</button>
+						</form>
+					</div>
 				</div>
-				<div class="panel-body">
-					<p><strong>Meeting Location:</strong> <%= date_night.meeting_location %></p>
-					<p><strong>Date and Time:</strong> <%= date_night.start_date.strftime("%m/%d/%Y") %> at <%= date_night.start_date.strftime("%I:%M %p") %></p>
-					<img src="<%= date_night.event.activity.picture_url %>" class="couple-image">
-					<br><br>
-					<a href="/date_nights/<%= date_night.id %>"><button class="btn btn-primary">See the Details</button></a>
-					<a href="/date_nights/<%= date_night.id %>/edit"><button class="btn btn-success">Edit the Details</button></a>
-					<br><br>
-					<form action="/date_nights/<%= date_night.id %>" method="POST">
-						<input type="hidden" name="_method" value="DELETE">
-						<button class="btn btn-warning">Cancel Date</button>
-					</form>
-				</div>
-			</div>
+			<% end %>
+		<% else %>
+			<h3>You haven't booked any dates. <a href="/couples/<%= @couple.id %>/date_nights/new">Make a date!</a></h3>
 		<% end %>
 	</div>
 </div>
