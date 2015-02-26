@@ -28,13 +28,13 @@ class DateNightsController < ApplicationController
 		initiator_emails = [initiator.a_email, initiator.b_email]
 		initiator_emails.each do |email|
 			client = SendGrid::Client.new(api_user: 'gretchenziegler', api_key: '8DinosaurCupcakes')
-			client.send(SendGrid::Mail.new(to: email, from: 'gretchenziegler@gmail.com', subject: 'You Booked a Delicious Date!', html: '<h1>What a Delicious Date!</h1><br><p>Go <a href="/date_nights/#{date_night.id}">check out the details</a> or send a message!</p>'))
+			client.send(SendGrid::Mail.new(to: email, from: 'gretchenziegler@gmail.com', subject: 'You Booked a Delicious Date!', html: '<h1>What a Delicious Date!</h1><br><p>Go <a href="/date_nights/#{date_night.id}">check out the details</a> or send a message!</p><a href="http://google.com">Google!</a>'))
 		end
 
 		receiver_emails = [receiver.a_email, receiver.b_email]
 		receiver_emails.each do |email|
 			client = SendGrid::Client.new(api_user: 'gretchenziegler', api_key: '8DinosaurCupcakes')
-			client.send(SendGrid::Mail.new(to: email, from: 'gretchenziegler@gmail.com', subject: "You've Been Invited on a Delicious Date!", html: '<h1>Someone has invited you on a date!</h1><br><p>Go <a href="/date_nights/#{date_night.id}">check out the details</a> and send them a message to accept!</p>'))
+			client.send(SendGrid::Mail.new(to: email, from: 'gretchenziegler@gmail.com', subject: "You've Been Invited on a Delicious Date!", html: '<h1>Someone has invited you on a date!</h1><br><p>Go <a href="/date_nights/#{date_night.id}">check out the details</a> and send them a message to accept!</p><a href="http://google.com">Google!</a>'))
 		end
 
 		redirect_to "/date_nights/#{date_night.id}"

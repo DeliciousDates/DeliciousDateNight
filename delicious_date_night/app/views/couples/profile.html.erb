@@ -61,10 +61,10 @@
 					<h3 class="panel-title"><strong>About <%= @couple.a_fname %>:</strong></h3>
 				</div>
 				<div class="panel-body">
-					<p>Full Name: <%= @couple.a_fname %> <%= @couple.a_lname %></p>
-					<p>Age: <%= @couple.a_age %></p>
-					<p>Gender: <%= @couple.a_gender %></p>
-					<p>Email Address: <%= @couple.a_email %></p>
+					<p><strong>Full Name:</strong> <%= @couple.a_fname %> <%= @couple.a_lname %></p>
+					<p><strong>Age:</strong> <%= @couple.a_age %></p>
+					<p><strong>Gender:</strong> <%= @couple.a_gender %></p>
+					<p><strong>Email Address:</strong> <%= @couple.a_email %></p>
 				</div>
 			</div>
 		</div>
@@ -75,10 +75,10 @@
 					<h3 class="panel-title"><strong>About <%= @couple.b_fname %>:</strong></h3>
 				</div>
 				<div class="panel-body">
-					<p>Full Name: <%= @couple.b_fname %> <%= @couple.b_lname %></p>
-					<p>Age: <%= @couple.b_age %></p>
-					<p>Gender: <%= @couple.b_gender %></p>
-					<p>Email Address: <%= @couple.b_email %></p>
+					<p><strong>Full Name:</strong> <%= @couple.b_fname %> <%= @couple.b_lname %></p>
+					<p><strong>Age:</strong> <%= @couple.b_age %></p>
+					<p><strong>Gender:</strong> <%= @couple.b_gender %></p>
+					<p><strong>Email Address:</strong> <%= @couple.b_email %></p>
 				</div>
 			</div>
 		</div>
@@ -103,10 +103,11 @@
 					<h3 class="panel-title"><strong><%= favorite.event.event_theme %></strong></h3>					
 				</div>
 				<div class="panel-body">
-					<p>Food: <%= favorite.event.food.cuisine %></p>
-					<p>Drink: <%= favorite.event.drink.recommended_drink %></p>
-					<p>Activity: <%= favorite.event.activity.name %></p>
+					<p><strong>Food:</strong> <%= favorite.event.food.cuisine %></p>
+					<p><strong>Drink:</strong> <%= favorite.event.drink.recommended_drink %></p>
+					<p><strong>Activity:</strong> <%= favorite.event.activity.name %></p>
 					<img src="<%= favorite.event.drink.picture_url %>" class="couple-image">
+					<br><br>
 					<form action="/couples/<%= @couple.id %>/date_nights/new">
 						<input type="hidden" name="event_id" value="<%= favorite.event_id %>">
 						<button class="btn btn-success">Book This Date</button>
@@ -129,9 +130,9 @@
 				<h3 class="panel-title"><strong><%= event.event_theme %></strong></h3>					
 			</div>
 			<div class="panel-body">
-				<p>Food: <%= event.food.cuisine %></p>
-				<p>Drink: <%= event.drink.recommended_drink %></p>
-				<p>Activity: <%= event.activity.name %></p>
+				<p><strong>Food:</strong> <%= event.food.cuisine %></p>
+				<p><strong>Drink:</strong> <%= event.drink.recommended_drink %></p>
+				<p><strong>Activity:</strong> <%= event.activity.name %></p>
 				<img src="<%= event.food.picture_url %>" class="couple-image">
 				<br><br>
 				<a href="/couples/<%= @couple.id %>/events/<%= event.id %>/edit"><button class="btn btn-success">Edit the Details</button></a>
@@ -153,10 +154,11 @@
 					<h3 class="panel-title"><strong><%= date_night.event.event_theme %></strong></h3>					
 				</div>
 				<div class="panel-body">
-					<p>Meeting Location: <%= date_night.meeting_location %></p>
-					<p>Date and Time: <%= date_night.start_date.strftime("%m/%d/%Y") %> at <%= date_night.start_date.strftime("%I:%M %p") %></p>
+					<p><strong>Meeting Location:</strong> <%= date_night.meeting_location %></p>
+					<p><strong>Date and Time:</strong> <%= date_night.start_date.strftime("%m/%d/%Y") %> at <%= date_night.start_date.strftime("%I:%M %p") %></p>
 					<img src="<%= date_night.event.activity.picture_url %>" class="couple-image">
 					<br><br>
+					<a href="/date_nights/<%= date_night.id %>"><button class="btn btn-primary">See the Details</button></a>
 					<a href="/date_nights/<%= date_night.id %>/edit"><button class="btn btn-success">Edit the Details</button></a>
 					<br><br>
 					<form action="/date_nights/<%= date_night.id %>" method="POST">
