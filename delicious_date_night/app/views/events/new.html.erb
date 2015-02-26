@@ -1,49 +1,43 @@
 
 
 <section class="container">
-<<<<<<< HEAD
-<h1>events form goes here</h1>
-=======
-<h1>Create an Event</h1>
->>>>>>> f43c0af1bbec50ddcabe5e0628a96766ed4ebca0
-<form method = "POST" action =<%= "/couples/" + @id.to_s + "/events"%>>
 
+	<h1>Create an Event</h1>
 
-<br>Activity:
-<select name = "activity">
-<% @activities.each do |each| %>
-<option value =<%=each.id%>><%=each.name%></option>
-<% end %>
-<<<<<<< HEAD
-=======
-</select>
->>>>>>> f43c0af1bbec50ddcabe5e0628a96766ed4ebca0
+	<form method = "POST" action =<%= "/couples/" + @id.to_s + "/events"%>>
+		<div class="form-group form-group-lg">
+			<h3>Activity:</h3>
+			<select class ="form-control" name ="activity">
+			<% @activities.each do |each| %>
+				<option value =<%=each.id%>><%=each.name%></option>
+			<% end %>
+			</select>
+		</div>
 
-<br>Food: 
-<select name = "food">
-<% @foods.each do |each| %>
-<option value =<%=each.id%>><%=each.cuisine%></option>
-<% end %>
-</select>
+		<div class="form-group form-group-lg">
+			<h3>Food:</h3>
+			<select class ="form-control" name ="food">
+			<% @foods.each do |each| %>
+				<option value =<%=each.id%>><%=each.cuisine%></option>
+			<% end %>
+			</select>
+		</div>
 
-<br>Drink:
-<select name = "drink">
-<% @drinks.each do |each| %>
-<option value =<%=each.id%>><%=each.recommended_drink%></option>
-<% end %>
-</select>
-<input type = "hidden" name = "couple_id" value = @id>
+		<div class="form-group form-group-lg">
+			<h3>Drink:</h3>
+			<select class ="form-control" name ="drink">
+			<% @drinks.each do |each| %>
+				<option value =<%=each.id%>><%=each.recommended_drink%></option>
+			<% end %>
+			</select>
+			<input type = "hidden" name ="couple_id" value = @id>
+		</div>
 
-<br>Theme:
-<<<<<<< HEAD
-<input type = "text" name = "theme">
-=======
-<input type = "text" name = "theme" required>
->>>>>>> f43c0af1bbec50ddcabe5e0628a96766ed4ebca0
-<input type = "submit">
-
-</form>
-
-
+		<div class="form-group form-group-lg">
+			<h3>Theme:</h3>
+			<input class ="form-control" type = "text" name ="theme" required>
+			<input id ="edit-event" type ="submit" class ="btn btn-primary btn-lg">
+		</div>
+	</form>
 
 </section>

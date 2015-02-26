@@ -39,5 +39,20 @@
 	margin-top: 50px;
 	height: 400px;
 	opacity: .75;
+}
+
+#edit-event {
+	margin-top: 1em;
+}
+
+.bottom-image {
+	margin-top: 4em;
+	display: block;
+	height: 25em;
+	width: 100%;
+	background-image: url('newyorkcity.jpg');
+	background-size: 100%;
+	background-position: -1px -11em;
 
 }
+
