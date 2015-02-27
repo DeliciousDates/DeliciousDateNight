@@ -41,11 +41,17 @@
 	opacity: .75;
 }
 
-.panel {
-	width: 300px;
+#edit-event {
+	margin-top: 1em;
 }
 
-/*.couple-image {
-	width: 275px;
-	display: inline-block;
-}*/
+.bottom-image {
+	margin-top: 4em;
+	display: block;
+	height: 25em;
+	width: 100%;
+	background-image: url('newyorkcity.jpg');
+	background-size: 100%;
+	background-position: -1px -11em;
+
+}

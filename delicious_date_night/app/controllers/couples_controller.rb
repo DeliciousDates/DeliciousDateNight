@@ -3,6 +3,7 @@ class CouplesController < ApplicationController
 	# GET /couples/:id
 	# get the information for couples that are not the user
 	def show
+		@user = Couple.find(session[:couple_id])
 		@couple = Couple.find(params[:id])
 		@event = Event.where(id: params[:id])
 	end
@@ -10,7 +11,6 @@ class CouplesController < ApplicationController
 	# GET couples/:id/edit
 	# get couple profile edit form
 	def edit
-# binding.pry
 		@id = (params[:id])
 		@couple = Couple.find(params[:id])
 	end

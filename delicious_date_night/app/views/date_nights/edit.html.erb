@@ -1,23 +1,39 @@
-<h1>Edit Your Date</h1>
+<script type="text/javascript">
+	window.onload = function() {
+		$('select').addClass('form-control');
+	}
+</script>
 
-<%= form_for @date_night, url: {action: "update"} do |date_night_form|%>
-	
-	Event: 
-	<%= date_night_form.select (:event_id) do %>
-		<% @options.each do |option| -%>
-			<%= content_tag(:option, option.first, value: option.last) %>
-		<% end %>
+<section class="container">
+	<h1>Edit Your Date</h1>
+
+	<%= form_for @date_night, url: {action: "update"} do |date_night_form|%>
+		
+		<div class="form-group form-group-lg">
+			<h3>Event: </h3>
+			<%= date_night_form.select (:event_id) do %>
+				<% @options.each do |option| -%>
+					<%= content_tag(:option, option.first, value: option.last) %>
+				<% end %>
+			<% end %>
+		</div>
+
+		<div class="form-group form-group-lg">
+			<h3>Meeting Location:</h3> <input class ="form-control" name="meeting_location" value="<%= @date_night.meeting_location %>" required/>
+		</div>
+
+		<div class="form-group form-group-lg">
+			<h3>Date and Time:</h3>
+			<input type="datetime-local" name="start_date" value="<%= @date_night.start_date %>" required/>
+			<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>" required/>
+			<button class ="btn btn-info">Edit Your Date</button>
+		</div>
+
 	<% end %>
 
-	Meeting Location: <input name="meeting_location" value="<%= @date_night.meeting_location %>" required/>
+	<a href="/date_nights/<%= @date_night.id %>"><button class ="btn btn-danger">Cancel</button></a>
 
-	Date and Time:
-	<input type="datetime-local" name="start_date" value="<%= @date_night.start_date %>" required/>
 
-	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>" required/>
-
-	<button>Edit Your Date</button>
-
-<% end %>
-
-<a href="/date_nights/<%= @date_night.id %>"><button>Cancel</button></a>
+</section>
+	<div class="bottom-image">
+	</div>
