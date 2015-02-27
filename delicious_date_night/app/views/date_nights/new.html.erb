@@ -1,65 +1,78 @@
 <div class="container">
-<h1>Create a Date</h1>
+	<h1>Create a Date</h1>
 
-<%= form_for @date_night, url: {action: "create"} do |date_night_form|%>
+	<%= form_for @date_night, url: {action: "create"} do |date_night_form|%>
 
 	<% if @receiver %>
-		<label><h2>Couple: <%= @receiver.a_fname %> and <%= @receiver.b_fname %></h2>
-			<br> 
-			<img src="<%= @receiver.avatar %>" alt="..." class="couple-image">
-			<input type="hidden" name="receiver" value="<%= @receiver.id %>" >
-		</label>
+	<label><h2>Couple: <%= @receiver.a_fname %> and <%= @receiver.b_fname %></h2>
+		<br> 
+		<img src="<%= @receiver.avatar %>" alt="..." class="couple-image">
+		<input type="hidden" name="receiver" value="<%= @receiver.id %>" >
+	</label>
 	<% else %>
-		<h2>Choose a Couple:</h2>
-		<% @receivers.each do |receiver| %>
-			<div class="row">
-			  <div class="col-sm-6 col-md-4">
-			  	<img src= "<%= receiver.avatar %>" alt="..." class="couple-image">
-			  	<div class="caption">
-			  		<h4><%= receiver.a_fname %> and <%= receiver.b_fname %></h4>
-			  	</div>
-			  		Select This Couple: <input type="radio" value="<%= receiver.id %>" name="receiver">
-			  </div>
+	<h2>Choose a Couple:</h2>
+	<div class="row">
+	<% @receivers.each do |receiver| %>
+	
+		<!-- <div class="col-sm-6 col-md-4"> -->
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title"><strong><h4><%= receiver.a_fname %> and <%= receiver.b_fname %></h4></strong></h3>
+				</div>
+				<div class="panel-body">
+					<img src= "<%= receiver.avatar %>" alt="..." class="couple-image" width=100%>
+					<div class="caption">
+
+					</div>
+					Select This Couple: <input type="radio" value="<%= receiver.id %>" name="receiver">
+				</div>
 			</div>
 			<br>
-		<% end %>
-	<% end %>
-
-	<hr>
-
-	<% if @event %>
-		<label><h2>Event: <%= @event.event_theme %></h2>
-			<br>
-			<img src="<%= @event.food.picture_url %>" alt="..." class="couple-image">
-			<img src="<%= @event.drink.picture_url %>" alt="..." class="couple-image">
-			<img src="<%= @event.activity.picture_url %>" alt="..." class="couple-image">
-			<input type="hidden" name="event" value="<%= @event.id %>"> 
-		</label>
-		<br>
-	<% else %>
-		<h2>Choose a Date:</h2>
-			<% @events.each do |event| %>
-				<div>
-					<img src="<%= event.activity.picture_url%>" alt="..." class="couple-image">
-					<h4><%= event.event_theme %></h4>
-					<p>Eat <strong><%= event.food.cuisine %></strong> food, drink a <strong><%= event.drink.recommended_drink %></strong> (or three!) and then hit up the main event: <strong><%= event.activity.name %>!</strong></p></p>
-				Select This Date: <input type="radio" name="event" value="<%= event.id %>">
-				</div>
-				<br>
 			<% end %>
-	<% end %>
+			<% end %>
 
-	<h2>Other Important Details:</h2>
+			<hr>
 
-	Meeting Location: <input type="text" name="meeting_location" required/>
+			<% if @event %>
+			<label>
+				<br>
 
-	Date and Time:
-	<input type="datetime-local" name="start_date" required/>
+			
+					<h2>Event: <%= @event.event_theme %></h2>
+      
+				<img src="<%= @event.food.picture_url %>" alt="..." class="couple-image">
+				<img src="<%= @event.drink.picture_url %>" alt="..." class="couple-image">
+				<img src="<%= @event.activity.picture_url %>" alt="..." class="couple-image">
+
+				<input type="hidden" name="event" value="<%= @event.id %>"> 
+			</label>
+			<br>
+			<% else %>
+			<h2>Choose a Date:</h2>
+			<% @events.each do |event| %>
+			<div>
+				<img src="<%= event.activity.picture_url%>" alt="..." class="couple-image">
+				<h4><%= event.event_theme %></h4>
+				<p>Eat <strong><%= event.food.cuisine %></strong> food, drink a <strong><%= event.drink.recommended_drink %></strong> (or three!) and then hit up the main event: <strong><%= event.activity.name %>!</strong></p></p>
+				Select This Date: <input type="radio" name="event" value="<%= event.id %>">
+			</div>
+			<br>
+			<% end %>
+			<% end %>
+			</div>
 
 
-	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>"/>
+			<h2>Other Important Details:</h2>
 
-	<button>Propose a Date!</button>
+			Meeting Location: <input type="text" name="meeting_location" required/>
 
-<% end %>
+			Date and Time:
+			<input type="datetime-local" name="start_date" required/>
+</div>
+
+			<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token() %>"/>
+
+			<button>Propose a Date!</button>
+
+			<% end %>
 

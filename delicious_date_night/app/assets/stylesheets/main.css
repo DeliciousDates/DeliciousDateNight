@@ -39,5 +39,13 @@
 	margin-top: 50px;
 	height: 400px;
 	opacity: .75;
-
 }
+
+.panel {
+	width: 300px;
+}
+
+/*.couple-image {
+	width: 275px;
+	display: inline-block;
+}*/
