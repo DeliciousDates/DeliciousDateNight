@@ -1,34 +1,4 @@
 <div class="container">
-
-			<h1><%= @couple.a_fname %> and <%= @couple.b_fname %>'s Profile</h1>
-	<div class="row">
-		<div class="col-sm-4">
-			<img src=<%= @couple.avatar %> width=100%></br>
-			<h4><%= @couple.description %></h4>	
-	</div>	
-</div>
-		<h2><%= @couple.a_fname %> <%= @couple.a_lname %>, <%= @couple.a_age %></h2> 
-		(<%= @couple.a_email %>)
-		<h2><%= @couple.b_fname %> <%= @couple.b_lname %>, <%= @couple.b_age %></h2> 
-		(<%= @couple.b_email %>)
-
-		<h4>from <%= @couple.city %></h4>
-
-
-		<a href="/couples/<%= @couple.id %>/date_nights/new"><button>Date us!</button></a></br>
-
-		<h2>Events Created By Us</h2>
-		<ul>
-			<% @couple.events.each do |event| %>
-			<li><%= event.event_theme %></li>
-	<div class="row">
-		<div class="col-sm-4">
-			<img src="<%= event.activity.picture_url %>" width=100%>
-		</div>
-	</div>	
-			<% end %>
-		</ul>
-
 	<h1><%= @couple.a_fname %> and <%= @couple.b_fname %>'s Profile</h1>
 	<br>	
 
